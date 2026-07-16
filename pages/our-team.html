@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Team – NEACOL</title>
+  <link rel="icon" type="image/png" href="https://neacol.org/wp-content/uploads/2023/03/8-compress.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .team-section-label {
+      font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+      color:var(--gold);border-bottom:2px solid var(--gold);padding-bottom:8px;
+      margin:56px 0 32px;display:block;
+    }
+    .team-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:28px; }
+    .bio-card { background:var(--white);border:1px solid var(--gray-light);border-radius:10px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column; }
+    .bio-card__img { width:100%;height:220px;object-fit:cover;object-position:top; }
+    .bio-card__no-photo { width:100%;height:100px;background:var(--navy);display:flex;align-items:center;justify-content:center; }
+    .bio-card__no-photo span { width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:rgba(255,255,255,.5); }
+    .bio-card__body { padding:20px 24px 24px;flex:1; }
+    .bio-card__name { font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:2px; }
+    .bio-card__role { font-size:.82rem;color:var(--gold);font-weight:600;margin-bottom:10px; }
+    .bio-card__text { font-size:.87rem;color:var(--text-light);line-height:1.6; }
+    .committee-item { padding:20px 24px;background:var(--off-white);border-radius:8px;border-left:4px solid var(--gold);margin-bottom:16px; }
+    .committee-item h4 { color:var(--navy);margin-bottom:8px; }
+    .member-row { display:flex;flex-wrap:wrap;gap:6px;margin-top:8px; }
+    .member-tag { background:var(--white);border:1px solid var(--gray-light);border-radius:20px;padding:3px 12px;font-size:.8rem;color:var(--text-light); }
+    .member-tag.chair { border-color:var(--gold);color:var(--navy);font-weight:700; }
+  </style>
+</head>
+<body>
+<div id="site-header"></div>
+<div class="page-banner">
+  <div class="container text-center">
+    <span class="label" style="color:var(--gold);">People</span>
+    <h1>Our Team</h1>
+  </div>
+</div>
+<main><div class="container">
+
+  <span class="team-section-label">Board of Directors</span>
+  <div class="team-grid">
+
+    <!-- Ricardo: Board Chair with photo -->
+    <div class="bio-card">
+      <img class="bio-card__img" src="https://neacol.org/wp-content/uploads/2025/10/Ricardo.png" alt="Ricardo A. Rodriguez" style="object-position:top center;">
+      <div class="bio-card__body">
+        <div class="bio-card__name">Ricardo A. Rodriguez</div>
+        <div class="bio-card__role">Chair, Board of Directors</div>
+        <p class="bio-card__text">Member of NEACOL since 2014. Currently Executive Director and CTO at Morgan Stanley NQP division. Former Second Vice President at Guardian Life. Co-Founded YallaCollect (Dubai). MS Finance, MBA (HULT), MS Information Systems (Harvard), BS Computer Sciences. Selected "100 Most Influential Hispanics in IT in the U.S." by HITEC for six consecutive years.</p>
+      </div>
+    </div>
+
+    <div class="bio-card">
+      <img class="bio-card__img" src="https://neacol.org/wp-content/uploads/2025/02/Isabel-Wright-1-740x1024.png" alt="Isabel Wright">
+      <div class="bio-card__body">
+        <div class="bio-card__name">Isabel Wright</div>
+        <div class="bio-card__role">Co-Founder &amp; Former President</div>
+        <p class="bio-card__text">Co-founder and former President of NEACOL for three terms. Born in La Guajira, Colombia. Launched the Annual Gala in 2015. Former project associate at the Ford Foundation. Holds a BBA and MPA from New York University. Works in the Banking industry managing business client portfolios.</p>
+      </div>
+    </div>
+
+    <div class="bio-card">
+      <img class="bio-card__img" src="https://neacol.org/wp-content/uploads/2023/03/Danielle-Jennings-fotor-bg-remover-20230329133959.png" alt="Danielle Jennings">
+      <div class="bio-card__body">
+        <div class="bio-card__name">Danielle Jennings</div>
+        <div class="bio-card__role">Board Member</div>
+        <p class="bio-card__text">Involved with NEACOL since the first Annual Gala in 2015; served as Treasurer 2017–2019. Over 8 years in financial services, currently at U.S. Bank in Global Corporate Trust Services as a CDO Portfolio Administrator. BS in Finance, Roger Williams University.</p>
+      </div>
+    </div>
+
+    <div class="bio-card">
+      <img class="bio-card__img" src="https://neacol.org/wp-content/uploads/2025/02/Akram.png" alt="Akram Rafla">
+      <div class="bio-card__body">
+        <div class="bio-card__name">Akram Rafla</div>
+        <div class="bio-card__role">Board Member</div>
+        <p class="bio-card__text">Practicing periodontist in Worcester and Wellesley. Degrees from Cairo University, University of Pennsylvania, and USC. Presiding chair for multiple nonprofit boards. Originally from Cairo; introduced to NEACOL in 2017 by his wife, Marta Rafla, a Colombian native.</p>
+      </div>
+    </div>
+
+    <div class="bio-card">
+      <img class="bio-card__img" src="https://neacol.org/wp-content/uploads/2025/05/Maria-Cladia-Board.png" alt="Maria Claudia Aguirre">
+      <div class="bio-card__body">
+        <div class="bio-card__name">Maria Claudia Aguirre</div>
+        <div class="bio-card__role">Co-Founder &amp; Inaugural President</div>
+        <p class="bio-card__text">Co-founder and inaugural president of NEACOL. Colombian-born, U.S. resident 30+ years. DDS from Universidad Autónoma de Manizales, MHA from Universidad del Valle. Led the Boston Initiative 2024–2025. Longtime volunteer with Needham Public Schools. Resides in Needham, MA.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <span class="team-section-label">Executive Team</span>
+  <div class="team-grid">
+
+    <div class="bio-card">
+      <img class="bio-card__img" src="https://neacol.org/wp-content/uploads/2023/04/Juan-G-Pardo-fotor-bg-remover-20230329134029.png" alt="Juan G. Pardo">
+      <div class="bio-card__body">
+        <div class="bio-card__name">Juan G. Pardo</div>
+        <div class="bio-card__role">Treasurer</div>
+        <p class="bio-card__text">Joined Hillel International in 2010 as Associate Director of Finance and Grant Management. Previously worked for a private CPA practice in South Florida. Originally from Pereira, Colombia. BA in Business Administration, Universidad Católica de Pereira; MS in Accountancy, Bentley University (2014). Lives in Boston with his wife Lina.</p>
+      </div>
+    </div>
+
+    <div class="bio-card">
+      <img class="bio-card__img" src="https://neacol.org/wp-content/uploads/2024/08/IMG_3152-1024x1024.jpg" alt="Natalia Torres">
+      <div class="bio-card__body">
+        <div class="bio-card__name">Natalia Torres</div>
+        <div class="bio-card__role">Operations Manager</div>
+        <p class="bio-card__text">Born in Barrancabermeja, Colombia. Industrial engineer with experience in maintenance projects and academic tutoring. Volunteered with local nonprofits in Colombia before moving to Massachusetts to pursue new professional opportunities and support the NEACOL mission.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <span class="team-section-label">Committee Chairs &amp; Members</span>
+
+  <div class="committee-item">
+    <h4>📣 Marketing</h4>
+    <div class="member-row">
+      <span class="member-tag chair">Xiomara Chica – Chair</span>
+      <span class="member-tag">Javier Borrero</span>
+      <span class="member-tag">Juan Salazar</span>
+      <span class="member-tag">Carlos Robledo</span>
+      <span class="member-tag">Thalia Patino</span>
+    </div>
+  </div>
+
+  <div class="committee-item">
+    <h4>🎉 Events</h4>
+    <div class="member-row">
+      <span class="member-tag chair">Mauricio Barrero – Chair</span>
+      <span class="member-tag">Cesar Garcia</span>
+      <span class="member-tag">Frank Pinto</span>
+      <span class="member-tag">Christina Brooks</span>
+      <span class="member-tag">David Rivera</span>
+    </div>
+  </div>
+
+  <div class="committee-item">
+    <h4>💰 Fundraising</h4>
+    <div class="member-row">
+      <span class="member-tag chair">Sandy Madero – Chair</span>
+      <span class="member-tag">Marcela Danesh</span>
+      <span class="member-tag">Margarita Escallon</span>
+      <span class="member-tag">Victoria Makrides</span>
+      <span class="member-tag">Manuela Villa</span>
+      <span class="member-tag">Andres Castano</span>
+      <span class="member-tag">Fernando Diaz</span>
+      <span class="member-tag">Luisa Lugo</span>
+      <span class="member-tag">Carolina Restrepo</span>
+    </div>
+  </div>
+
+  <div class="committee-item">
+    <h4>📊 Projects</h4>
+    <div class="member-row">
+      <span class="member-tag chair">Olga Lopez – Co-Chair</span>
+      <span class="member-tag chair">Catalina Lotero – Co-Chair</span>
+      <span class="member-tag">Laura Torres</span>
+      <span class="member-tag">Marta Rafla</span>
+      <span class="member-tag">Carolina Buitrago</span>
+      <span class="member-tag">Danielle Jennings</span>
+      <span class="member-tag">Clara Lopez Ospina</span>
+      <span class="member-tag">Maria Elvira Restrepo-Toro</span>
+    </div>
+  </div>
+
+  <div class="committee-item">
+    <h4>🤝 Membership</h4>
+    <div class="member-row">
+      <span class="member-tag chair">Natalia Arias – Chair</span>
+      <span class="member-tag">Lina Jimenez</span>
+      <span class="member-tag">Francely Enriquez</span>
+    </div>
+  </div>
+
+  <div class="committee-item" style="margin-bottom:0;">
+    <h4>💻 Information Technology</h4>
+    <div class="member-row">
+      <span class="member-tag chair">Mauricio Barrero – Chair</span>
+      <span class="member-tag">Ricardo Rodriguez</span>
+      <span class="member-tag">Michael Horton</span>
+      <span class="member-tag">Dominick Costanzo</span>
+      <span class="member-tag">Diana Arias</span>
+    </div>
+  </div>
+
+  <div class="text-center" style="margin:56px 0 72px;">
+    <a href="board-roles.html"     class="btn btn--outline" style="margin:6px;">Board Roles</a>
+    <a href="executive-roles.html" class="btn btn--outline" style="margin:6px;">Executive Roles</a>
+    <a href="committees.html"      class="btn btn--outline" style="margin:6px;">Committee Roles</a>
+    <a href="volunteer.html"       class="btn btn--gold"    style="margin:6px;">Join Our Team</a>
+  </div>
+
+</div></main>
+<div id="site-footer"></div>
+<script>window.NEACOL_ROOT = '../';</script>
+<script src="../js/components.js"></script>
+</body>
+</html>

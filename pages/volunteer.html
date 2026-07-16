@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volunteer – NEACOL</title>
+  <meta name="description" content="Volunteer with NEACOL and help make a positive impact on the lives of Colombian children.">
+  <link rel="icon" type="image/png" href="https://neacol.org/wp-content/uploads/2023/03/8-compress.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .committee-card {
+      background: var(--white);
+      border: 1px solid var(--gray-light);
+      border-radius: 10px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+    .committee-card h4 { color: var(--navy); margin-bottom: 8px; }
+    .committee-card p  { font-size: .9rem; color: var(--text-light); }
+  </style>
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<div class="page-banner">
+  <div class="container text-center">
+    <span class="label" style="color:var(--gold);">Get Involved</span>
+    <h1>Volunteer with NEACOL</h1>
+  </div>
+</div>
+
+<main class="section">
+  <div class="container">
+
+    <div class="about-grid" style="margin-bottom:64px;">
+      <div>
+        <span class="label">Why Volunteer?</span>
+        <h2>Make a Real Impact</h2>
+        <p>Our organization is run almost entirely by volunteers. It is through the dedication and hard work of people like you that we are able to make a positive impact on the lives of Colombian children in need.</p>
+        <p>By volunteering with NEACOL, you have the opportunity to connect with like-minded individuals who share your passion for creating positive change. You will build lasting friendships, develop new skills, and contribute meaningfully to a cause that matters.</p>
+        <p>Whether you have a background in marketing, finance, events planning, project management, or simply want to help — there is a place for you at NEACOL.</p>
+      </div>
+      <div>
+        <img src="https://neacol.org/wp-content/uploads/2023/04/Neacol-en-Mocoa-6-scaled.jpg" alt="NEACOL Volunteers" style="border-radius:10px;width:100%;">
+      </div>
+    </div>
+
+    <!-- Committees -->
+    <div class="text-center section__header">
+      <span class="label">Join a Team</span>
+      <h2>Our Committees</h2>
+      <p style="max-width:600px;margin:8px auto 0;color:var(--text-light);">Volunteers can join one or more committees based on their skills and interests.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px;margin-bottom:56px;">
+      <div class="committee-card">
+        <h4>📣 Marketing</h4>
+        <p>Manage NEACOL's social media presence, create content, design materials, and help spread the word about our mission.</p>
+      </div>
+      <div class="committee-card">
+        <h4>🎉 Events</h4>
+        <p>Plan and coordinate fundraising events, galas, mixers, and other community gatherings that raise funds and awareness.</p>
+      </div>
+      <div class="committee-card">
+        <h4>📊 Projects</h4>
+        <p>Review grant proposals, evaluate applicant organizations, and monitor the impact of funded projects in Colombia.</p>
+      </div>
+      <div class="committee-card">
+        <h4>💰 Fundraising</h4>
+        <p>Develop and execute fundraising strategies, cultivate donor relationships, and secure sponsorships.</p>
+      </div>
+      <div class="committee-card">
+        <h4>💻 IT</h4>
+        <p>Maintain our website, databases, and digital tools to keep our operations running smoothly.</p>
+      </div>
+      <div class="committee-card">
+        <h4>🤝 Membership</h4>
+        <p>Recruit new members, maintain member communications, and grow NEACOL's community of supporters.</p>
+      </div>
+    </div>
+
+    <!-- Volunteer Form -->
+    <div style="max-width:680px;margin:0 auto;">
+      <div class="form-card">
+        <h2 style="margin-bottom:4px;">Apply to Volunteer</h2>
+        <p style="color:var(--text-light);margin-bottom:28px;">Fill out the form below and a member of our team will be in touch.</p>
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" placeholder="Your full name">
+        </div>
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" placeholder="you@example.com">
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="+1 (555) 000-0000">
+        </div>
+        <div class="form-group">
+          <label>Committee(s) of Interest *</label>
+          <select>
+            <option value="">— Select a committee —</option>
+            <option>Marketing</option>
+            <option>Events</option>
+            <option>Projects</option>
+            <option>Fundraising</option>
+            <option>IT</option>
+            <option>Membership</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Tell us about yourself and why you want to volunteer</label>
+          <textarea rows="5" placeholder="Your background, skills, and motivation..."></textarea>
+        </div>
+        <button class="btn btn--gold" onclick="alert('Form submitted! We will be in touch soon.')">Submit Application</button>
+        <p style="font-size:.8rem;color:var(--gray-mid);margin-top:12px;">* Required fields. You can also email us directly at <a href="mailto:info@neacol.org">info@neacol.org</a>.</p>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<div id="site-footer"></div>
+<script>window.NEACOL_ROOT = '../';</script>
+<script src="../js/components.js"></script>
+</body>
+</html>

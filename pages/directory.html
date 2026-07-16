@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colombia en Nueva Inglaterra – Business Directory | NEACOL</title>
+  <meta name="description" content="The Colombian Business Directory for New England. Discover and support Colombian-owned businesses across Boston, Lowell, Cambridge, Revere and beyond.">
+  <link rel="icon" type="image/png" href="https://neacol.org/wp-content/uploads/2023/03/8-compress.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+
+    /* ─────────────────────────────────────────────────
+       COLOMBIA IN NEW ENGLAND — IDENTITY SYSTEM
+    ───────────────────────────────────────────────── */
+
+    /* Colombian flag tri-stripe, always visible at top */
+    .dir-flag-stripe {
+      height: 8px;
+      width: 100%;
+      background: linear-gradient(to right,
+        var(--co-yellow) 0% 50%,
+        var(--co-blue)   50% 75%,
+        var(--co-red)    75% 100%);
+      display: block;
+    }
+
+    /* ── HERO ──────────────────────────────────────── */
+    .dir-hero {
+      background: #001933;
+      position: relative;
+      overflow: hidden;
+      padding: 0;
+    }
+    /* Layered background: map texture + radial glows */
+    .dir-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 85% 30%, rgba(252,209,22,.22) 0%, transparent 40%),
+        radial-gradient(ellipse at 15% 80%, rgba(0,51,128,.5)    0%, transparent 45%),
+        radial-gradient(ellipse at 50% 110%, rgba(206,17,38,.18)  0%, transparent 35%);
+    }
+    /* Diagonal gold sweep */
+    .dir-hero::after {
+      content: '';
+      position: absolute;
+      top: -60px; right: -80px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(252,209,22,.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .dir-hero__inner {
+      position: relative; z-index: 2;
+      padding: 64px 0 0;
+    }
+
+    /* Brand lockup */
+    .dir-brand-lockup {
+      display: flex; align-items: center; gap: 18px; margin-bottom: 28px;
+    }
+    .dir-brand-flag {
+      font-size: 3.6rem; line-height: 1;
+      filter: drop-shadow(0 4px 14px rgba(0,0,0,.4));
+      flex-shrink: 0;
+    }
+    .dir-brand-text {}
+    .dir-brand-sup {
+      font-size: .72rem; font-weight: 900; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--co-yellow);
+      background: rgba(252,209,22,.12); border: 1px solid rgba(252,209,22,.3);
+      padding: 4px 12px; border-radius: 20px; display: inline-block;
+      margin-bottom: 6px;
+    }
+    .dir-brand-title {
+      font-size: clamp(1.9rem, 4.5vw, 3.2rem);
+      font-weight: 900; color: #fff; line-height: 1.1;
+      letter-spacing: -.01em;
+    }
+    .dir-brand-title em {
+      font-style: normal;
+      background: linear-gradient(90deg, var(--co-yellow), #ffe564);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .dir-brand-sub {
+      font-size: 1.05rem; color: rgba(255,255,255,.6);
+      font-style: italic; letter-spacing: .04em; margin-top: 3px;
+    }
+
+    .dir-hero__desc {
+      color: rgba(255,255,255,.78); font-size: 1rem;
+      max-width: 560px; line-height: 1.7; margin-bottom: 28px;
+    }
+
+    .dir-hero__ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+    .btn-co-yellow {
+      background: var(--co-yellow); color: #0a1640;
+      font-weight: 800; padding: 12px 28px; border-radius: var(--radius);
+      font-size: .95rem; transition: all .2s; text-decoration: none; display: inline-block;
+    }
+    .btn-co-yellow:hover {
+      background: #ffe040; color: #0a1640;
+      transform: translateY(-2px); box-shadow: 0 6px 20px rgba(252,209,22,.35);
+    }
+    .btn-co-outline {
+      background: transparent; color: #fff;
+      border: 2px solid rgba(255,255,255,.3);
+      font-weight: 700; padding: 12px 28px; border-radius: var(--radius);
+      font-size: .95rem; transition: all .2s; text-decoration: none; display: inline-block;
+    }
+    .btn-co-outline:hover { border-color: var(--co-yellow); color: var(--co-yellow); }
+
+    /* Stats bar */
+    .dir-hero__stats {
+      display: flex; gap: 0;
+      border-top: 1px solid rgba(255,255,255,.1);
+      margin-top: 8px;
+    }
+    .dir-stat-cell {
+      flex: 1; padding: 24px 20px; text-align: center;
+      border-right: 1px solid rgba(255,255,255,.08);
+    }
+    .dir-stat-cell:last-child { border-right: none; }
+    .dir-stat-cell__n {
+      font-size: 1.9rem; font-weight: 900; line-height: 1;
+      background: linear-gradient(135deg, var(--co-yellow), #ffe564);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .dir-stat-cell__l { font-size: .76rem; color: rgba(255,255,255,.5); margin-top: 4px; text-transform: uppercase; letter-spacing: .08em; }
+
+    /* "Colombia in New England" brand bar below hero */
+    .dir-brand-bar {
+      background: var(--co-blue);
+      padding: 14px 0;
+      text-align: center;
+    }
+    .dir-brand-bar__inner {
+      display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap;
+    }
+    .dir-brand-bar__name {
+      color: var(--co-yellow); font-weight: 800; font-size: 1rem; letter-spacing: .04em;
+    }
+    .dir-brand-bar__tagline {
+      color: rgba(255,255,255,.65); font-size: .84rem;
+    }
+    .dir-brand-bar__sep {
+      width: 4px; height: 4px; border-radius: 50%;
+      background: rgba(255,255,255,.3); flex-shrink: 0;
+    }
+
+    /* ── SEARCH + FILTER BAR ───────────────────────── */
+    .dir-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-light);
+      padding: 16px 0;
+      position: sticky; top: var(--header-h); z-index: 90;
+      box-shadow: 0 3px 12px rgba(0,0,0,.07);
+    }
+    .dir-bar__inner { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .dir-search-wrap { position: relative; flex: 1; min-width: 200px; }
+    .dir-search-wrap svg { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); opacity: .4; pointer-events: none; }
+    #dirSearch {
+      width: 100%; padding: 10px 14px 10px 38px;
+      border: 1.5px solid var(--gray-light); border-radius: var(--radius);
+      font-family: inherit; font-size: .91rem; outline: none; transition: border-color .2s;
+    }
+    #dirSearch:focus { border-color: var(--co-blue); }
+    .dir-filter {
+      padding: 10px 14px; border: 1.5px solid var(--gray-light); border-radius: var(--radius);
+      font-family: inherit; font-size: .87rem; background: var(--white);
+      outline: none; cursor: pointer; color: var(--text);
+    }
+    .dir-filter-pills { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+    .filter-pill {
+      padding: 5px 14px; border-radius: 40px; border: 1.5px solid var(--gray-light);
+      font-size: .79rem; font-weight: 600; cursor: pointer; background: var(--white);
+      color: var(--text-light); transition: all .18s;
+    }
+    .filter-pill:hover  { border-color: var(--co-blue); color: var(--co-blue); }
+    .filter-pill.active { background: var(--co-blue); border-color: var(--co-blue); color: #fff; }
+
+    /* ── SECTION HEADS ─────────────────────────────── */
+    .dir-section-head { display: flex; align-items: center; gap: 12px; margin: 52px 0 24px; }
+    .dir-section-head h2 { margin: 0; }
+    .badge-featured {
+      background: linear-gradient(90deg, var(--co-yellow), #ffe04a);
+      color: #0a1640; font-size: .7rem; font-weight: 900;
+      letter-spacing: .1em; text-transform: uppercase;
+      padding: 4px 11px; border-radius: 20px;
+    }
+    .dir-count { font-size: .84rem; color: var(--gray-mid); margin-left: auto; }
+
+    /* ── SPONSORED CARD ────────────────────────────── */
+    .sponsored-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 24px;
+    }
+    .scard {
+      background: var(--white);
+      border: 2px solid var(--co-yellow);
+      border-radius: 14px; overflow: hidden;
+      box-shadow: 0 4px 20px rgba(252,209,22,.13);
+      transition: transform .2s, box-shadow .2s;
+      position: relative; display: flex; flex-direction: column;
+    }
+    .scard:hover { transform: translateY(-5px); box-shadow: 0 12px 36px rgba(0,51,128,.18); }
+    .scard__ribbon {
+      position: absolute; top: 14px; right: -1px;
+      background: linear-gradient(90deg, var(--co-blue), #0047cc);
+      color: #fff; font-size: .66rem; font-weight: 900;
+      letter-spacing: .1em; text-transform: uppercase;
+      padding: 4px 14px 4px 10px; border-radius: 4px 0 0 4px;
+    }
+    .scard__header {
+      background: linear-gradient(135deg, #001540 0%, var(--co-blue) 100%);
+      padding: 26px 22px 20px;
+      display: flex; align-items: flex-start; gap: 14px;
+    }
+    .scard__logo {
+      width: 64px; height: 64px; border-radius: 10px;
+      background: rgba(255,255,255,.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.7rem; flex-shrink: 0;
+      border: 1.5px solid rgba(255,255,255,.18);
+    }
+    .scard__name    { font-size: 1.1rem; font-weight: 800; color: #fff; margin-bottom: 3px; }
+    .scard__tagline { font-size: .81rem; color: rgba(255,255,255,.6); }
+    .scard__cats    { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+    .scard__cat {
+      background: rgba(252,209,22,.2); color: var(--co-yellow);
+      font-size: .68rem; font-weight: 700; letter-spacing: .04em;
+      padding: 3px 9px; border-radius: 12px; text-transform: uppercase;
+    }
+    .scard__body    { padding: 18px 22px 22px; flex: 1; display: flex; flex-direction: column; }
+    .scard__desc    { font-size: .89rem; color: var(--text-light); line-height: 1.65; flex: 1; }
+    .scard__meta    {
+      display: flex; flex-wrap: wrap; gap: 12px;
+      margin: 14px 0; padding: 12px 0;
+      border-top: 1px solid var(--gray-light);
+      border-bottom: 1px solid var(--gray-light);
+    }
+    .scard__meta-item { display: flex; align-items: center; gap: 5px; font-size: .81rem; color: var(--text-light); }
+    .scard__actions { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+    .scard__visit {
+      flex: 1; background: var(--co-blue); color: #fff;
+      border: none; border-radius: var(--radius);
+      padding: 10px 18px; font-family: inherit;
+      font-size: .87rem; font-weight: 700; cursor: pointer;
+      text-align: center; text-decoration: none; transition: background .2s;
+    }
+    .scard__visit:hover { background: #0047cc; color: #fff; }
+    .scard__social { display: flex; gap: 8px; align-items: center; }
+    .scard__social a {
+      width: 33px; height: 33px; border-radius: 7px;
+      background: var(--off-white); border: 1px solid var(--gray-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .74rem; font-weight: 700; color: var(--navy); transition: all .18s;
+    }
+    .scard__social a:hover { background: var(--co-blue); color: #fff; border-color: var(--co-blue); }
+
+    /* ── UPGRADE STRIP ─────────────────────────────── */
+    .upgrade-strip {
+      display: flex; align-items: center; gap: 20px;
+      background: linear-gradient(135deg, #001540, var(--co-blue));
+      border: 1px solid rgba(252,209,22,.25);
+      border-radius: 10px; padding: 18px 28px;
+      margin: 32px 0; flex-wrap: wrap;
+    }
+    .upgrade-strip strong { color: var(--co-yellow); }
+    .upgrade-strip p { margin: 0; font-size: .87rem; color: rgba(255,255,255,.7); }
+    .upgrade-strip__text { flex: 1; }
+
+    /* ── BASIC CARDS ───────────────────────────────── */
+    .basic-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px; margin-bottom: 60px;
+    }
+    .bcard {
+      background: var(--white); border: 1px solid var(--gray-light);
+      border-radius: 10px; padding: 18px 20px;
+      display: flex; flex-direction: column;
+      transition: box-shadow .18s, border-color .18s;
+    }
+    .bcard:hover { box-shadow: var(--shadow); border-color: #ccc; }
+    .bcard__top { display: flex; align-items: flex-start; gap: 12px; }
+    .bcard__icon {
+      width: 44px; height: 44px; border-radius: 8px;
+      background: var(--off-white); border: 1px solid var(--gray-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.25rem; flex-shrink: 0;
+    }
+    .bcard__name { font-weight: 700; color: var(--navy); font-size: .96rem; margin-bottom: 2px; }
+    .bcard__cat  { font-size: .73rem; color: var(--co-blue); font-weight: 700; }
+    .bcard__desc { font-size: .84rem; color: var(--text-light); margin: 9px 0; line-height: 1.55; }
+    .bcard__foot {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 9px; border-top: 1px solid var(--gray-light); margin-top: auto;
+    }
+    .bcard__loc  { font-size: .77rem; color: var(--gray-mid); }
+    .bcard__link { font-size: .79rem; font-weight: 700; color: var(--co-blue); }
+    .bcard__link:hover { text-decoration: underline; }
+
+    /* ── SUBMIT SECTION ────────────────────────────── */
+    .dir-submit {
+      background: linear-gradient(135deg, #001540 0%, var(--co-blue) 60%, #002060 100%);
+      border-radius: 14px; padding: 52px 40px;
+      text-align: center; margin: 40px 0 72px;
+      position: relative; overflow: hidden;
+    }
+    .dir-submit::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 6px;
+      background: linear-gradient(to right,
+        var(--co-yellow) 0% 50%,
+        var(--co-blue)   50% 75%,
+        var(--co-red)    75% 100%);
+    }
+    .dir-submit > * { position: relative; z-index: 1; }
+    .dir-submit h2 { color: #fff; margin-bottom: 8px; }
+    .dir-submit p  { color: rgba(255,255,255,.7); max-width: 520px; margin: 0 auto 28px; }
+    .tier-compare  { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px; }
+    .tier-pill {
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14);
+      border-radius: 10px; padding: 18px 24px; text-align: left; min-width: 200px;
+    }
+    .tier-pill.featured-tier { border-color: var(--co-yellow); background: rgba(252,209,22,.08); }
+    .tier-pill h4 { color: #fff; font-size: .94rem; margin-bottom: 6px; }
+    .tier-pill.featured-tier h4 { color: var(--co-yellow); }
+    .tier-pill ul { list-style: none; }
+    .tier-pill ul li { font-size: .81rem; color: rgba(255,255,255,.6); padding: 3px 0; }
+    .tier-pill ul li::before { content: '✓ '; color: var(--co-yellow); font-weight: 700; }
+    .tier-pill.featured-tier ul li { color: rgba(255,255,255,.8); }
+
+    /* ── NO RESULTS ────────────────────────────────── */
+    #noResults { text-align: center; padding: 56px 0; color: var(--gray-mid); display: none; }
+
+    /* ── RESPONSIVE ────────────────────────────────── */
+    @media (max-width: 640px) {
+      .sponsored-grid { grid-template-columns: 1fr; }
+      .basic-grid     { grid-template-columns: 1fr; }
+      .dir-brand-lockup { flex-direction: column; text-align: center; gap: 10px; }
+      .dir-hero__ctas { justify-content: center; }
+      .dir-hero__stats { grid-template-columns: repeat(2,1fr); }
+      .upgrade-strip  { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<!-- ═══ COLOMBIA IN NEW ENGLAND — HERO ═══════════ -->
+<div class="dir-hero">
+  <div class="dir-flag-stripe"></div>
+  <div class="container dir-hero__inner">
+
+    <div class="dir-brand-lockup">
+      <div class="dir-brand-flag">🇨🇴</div>
+      <div class="dir-brand-text">
+        <div class="dir-brand-sup">🆕 Now Launching</div>
+        <div class="dir-brand-title">Colombia en<br><em>Nueva Inglaterra</em></div>
+        <div class="dir-brand-sub">Colombian Business Directory · New England</div>
+      </div>
+    </div>
+
+    <p class="dir-hero__desc">
+      The first dedicated directory of Colombian-owned businesses and entrepreneurs across New England. From the bakeries of East Boston to tech startups in Cambridge — our community is building something extraordinary. Find them. Support them.
+    </p>
+
+    <div class="dir-hero__ctas">
+      <a href="#directory" class="btn-co-yellow">Browse Businesses</a>
+      <a href="#submit" class="btn-co-outline">List Your Business — Free</a>
+    </div>
+
+    <div class="dir-hero__stats">
+      <div class="dir-stat-cell">
+        <div class="dir-stat-cell__n">18+</div>
+        <div class="dir-stat-cell__l">Businesses</div>
+      </div>
+      <div class="dir-stat-cell">
+        <div class="dir-stat-cell__n">7</div>
+        <div class="dir-stat-cell__l">Cities</div>
+      </div>
+      <div class="dir-stat-cell">
+        <div class="dir-stat-cell__n">8</div>
+        <div class="dir-stat-cell__l">Categories</div>
+      </div>
+      <div class="dir-stat-cell">
+        <div class="dir-stat-cell__n">6</div>
+        <div class="dir-stat-cell__l">Sponsored</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Brand identity bar -->
+<div class="dir-brand-bar">
+  <div class="container dir-brand-bar__inner">
+    <span class="dir-brand-bar__name">Colombia en Nueva Inglaterra</span>
+    <span class="dir-brand-bar__sep"></span>
+    <span class="dir-brand-bar__tagline">A NEACOL Initiative · Supporting the Colombian Community in New England</span>
+    <span class="dir-brand-bar__sep"></span>
+    <span class="dir-brand-bar__tagline">East Boston · Cambridge · Lowell · Revere · Somerville · Newton · Boston</span>
+  </div>
+</div>
+
+<!-- ═══ SEARCH + FILTER BAR ═══════════════════════ -->
+<div class="dir-bar" id="directory">
+  <div class="container">
+    <div class="dir-bar__inner">
+      <div class="dir-search-wrap">
+        <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" id="dirSearch" placeholder="Search businesses, categories, locations…" aria-label="Search directory">
+      </div>
+      <select class="dir-filter" id="dirCatFilter" aria-label="Filter by category">
+        <option value="">All Categories</option>
+        <option>Food &amp; Beverage</option>
+        <option>Beauty &amp; Personal Care</option>
+        <option>Professional Services</option>
+        <option>Technology</option>
+        <option>Real Estate</option>
+        <option>Health &amp; Wellness</option>
+        <option>Finance &amp; Accounting</option>
+        <option>Arts &amp; Culture</option>
+        <option>Construction &amp; Trades</option>
+        <option>Education</option>
+      </select>
+      <select class="dir-filter" id="dirLocFilter" aria-label="Filter by location">
+        <option value="">All Locations</option>
+        <option>Boston</option>
+        <option>East Boston</option>
+        <option>Cambridge</option>
+        <option>Lowell</option>
+        <option>Revere</option>
+        <option>Somerville</option>
+        <option>Newton</option>
+      </select>
+    </div>
+    <div class="dir-filter-pills">
+      <button class="filter-pill active" data-cat="">All</button>
+      <button class="filter-pill" data-cat="Food &amp; Beverage">🍽 Food &amp; Beverage</button>
+      <button class="filter-pill" data-cat="Professional Services">💼 Professional Services</button>
+      <button class="filter-pill" data-cat="Technology">💻 Technology</button>
+      <button class="filter-pill" data-cat="Beauty &amp; Personal Care">💅 Beauty</button>
+      <button class="filter-pill" data-cat="Real Estate">🏠 Real Estate</button>
+      <button class="filter-pill" data-cat="Health &amp; Wellness">🏥 Health</button>
+      <button class="filter-pill" data-cat="Finance &amp; Accounting">💰 Finance</button>
+      <button class="filter-pill" data-cat="Construction &amp; Trades">🔨 Construction</button>
+    </div>
+  </div>
+</div>
+
+<main>
+<div class="container">
+
+  <!-- ═══ FEATURED LISTINGS ═══════════════════════ -->
+  <div class="dir-section-head">
+    <h2>Featured Listings</h2>
+    <span class="badge-featured">⭐ Sponsored</span>
+    <span class="dir-count" id="sponsoredCount">6 businesses</span>
+  </div>
+  <div class="sponsored-grid" id="sponsoredGrid">
+
+    <div class="scard" data-cat="Food &amp; Beverage" data-loc="East Boston" data-name="La Sultana Bakery">
+      <div class="scard__ribbon">⭐ FEATURED</div>
+      <div class="scard__header">
+        <div class="scard__logo">🥐</div>
+        <div>
+          <div class="scard__name">La Sultana Bakery</div>
+          <div class="scard__tagline">Colombian pastries, breads &amp; community hub since 1993</div>
+          <div class="scard__cats"><span class="scard__cat">Food &amp; Beverage</span><span class="scard__cat">Bakery · Café</span></div>
+        </div>
+      </div>
+      <div class="scard__body">
+        <p class="scard__desc">One of East Boston's most beloved institutions, La Sultana Bakery has served the Colombian and broader Latino community from Maverick Square since 1993. Founded by Amelia Sanchez, celebrated for authentic Colombian sweets and baked goods — and long a welcoming space for newcomers seeking community.</p>
+        <div class="scard__meta">
+          <span class="scard__meta-item">📍 Maverick Square, East Boston, MA</span>
+          <span class="scard__meta-item">🗓 Est. 1993 · 30+ years of community</span>
+        </div>
+        <div class="scard__actions">
+          <a href="#submit" class="scard__visit">Visit Business</a>
+          <div class="scard__social"><a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scard" data-cat="Food &amp; Beverage" data-loc="East Boston" data-name="El Peñol">
+      <div class="scard__ribbon">⭐ FEATURED</div>
+      <div class="scard__header">
+        <div class="scard__logo">🍲</div>
+        <div>
+          <div class="scard__name">El Peñol</div>
+          <div class="scard__tagline">Authentic Colombian cuisine in the heart of East Boston</div>
+          <div class="scard__cats"><span class="scard__cat">Food &amp; Beverage</span><span class="scard__cat">Colombian Restaurant</span></div>
+        </div>
+      </div>
+      <div class="scard__body">
+        <p class="scard__desc">El Peñol brings the flavors of Colombia to East Boston's vibrant dining scene. The menu features classic dishes including yuca fritas, salmon soup, and grilled chicken in a creamy cilantro-mushroom sauce. A neighborhood favorite known for generous portions and a warm family atmosphere.</p>
+        <div class="scard__meta">
+          <span class="scard__meta-item">📍 East Boston, MA</span>
+          <span class="scard__meta-item">🍽 Dine-in · Takeout</span>
+        </div>
+        <div class="scard__actions">
+          <a href="#submit" class="scard__visit">Visit Business</a>
+          <div class="scard__social"><a href="#" title="Facebook">f</a><a href="#" title="Google">G</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scard" data-cat="Food &amp; Beverage" data-loc="Lowell" data-name="Panela Restaurant">
+      <div class="scard__ribbon">⭐ FEATURED</div>
+      <div class="scard__header">
+        <div class="scard__logo">🌿</div>
+        <div>
+          <div class="scard__name">Panela</div>
+          <div class="scard__tagline">Colombian flavors bringing a taste of home to Lowell</div>
+          <div class="scard__cats"><span class="scard__cat">Food &amp; Beverage</span><span class="scard__cat">Colombian Restaurant</span></div>
+        </div>
+      </div>
+      <div class="scard__body">
+        <p class="scard__desc">Panela serves the Colombian community of Lowell with traditional recipes rooted in the flavors of home. Named for the unrefined cane sugar that sweetens countless Colombian dishes, it has become a go-to for authentic cooking in the Merrimack Valley.</p>
+        <div class="scard__meta">
+          <span class="scard__meta-item">📍 Lowell, MA</span>
+          <span class="scard__meta-item">🍽 Dine-in · Takeout · Catering</span>
+        </div>
+        <div class="scard__actions">
+          <a href="#submit" class="scard__visit">Visit Business</a>
+          <div class="scard__social"><a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scard" data-cat="Professional Services" data-loc="Boston" data-name="Andina Consulting Group">
+      <div class="scard__ribbon">⭐ FEATURED</div>
+      <div class="scard__header">
+        <div class="scard__logo">📊</div>
+        <div>
+          <div class="scard__name">Andina Consulting Group</div>
+          <div class="scard__tagline">Strategy, finance &amp; operations for growing businesses</div>
+          <div class="scard__cats"><span class="scard__cat">Professional Services</span><span class="scard__cat">Bilingual Advisory</span></div>
+        </div>
+      </div>
+      <div class="scard__body">
+        <p class="scard__desc">Boston-based management consulting firm founded by Colombian professionals. Specializes in growth strategy, financial modeling, and operational efficiency for mid-market companies. Bridges the US and Latin American business worlds with fully bilingual advisory services. <em style="font-size:.8rem;color:var(--gray-mid);">(Sample listing)</em></p>
+        <div class="scard__meta">
+          <span class="scard__meta-item">📍 Boston, MA (Seaport District)</span>
+          <span class="scard__meta-item">🌐 EN · ES Bilingual</span>
+        </div>
+        <div class="scard__actions">
+          <a href="#submit" class="scard__visit">Visit Business</a>
+          <div class="scard__social"><a href="#" title="LinkedIn">in</a><a href="#" title="Twitter">𝕏</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scard" data-cat="Technology" data-loc="Cambridge" data-name="ColTech Solutions">
+      <div class="scard__ribbon">⭐ FEATURED</div>
+      <div class="scard__header">
+        <div class="scard__logo">💻</div>
+        <div>
+          <div class="scard__name">ColTech Solutions</div>
+          <div class="scard__tagline">Software development &amp; digital transformation</div>
+          <div class="scard__cats"><span class="scard__cat">Technology</span><span class="scard__cat">Software · Web</span></div>
+        </div>
+      </div>
+      <div class="scard__body">
+        <p class="scard__desc">Cambridge-based software and digital transformation agency founded by Colombian engineers. Builds custom web applications, mobile products, and data platforms for startups and nonprofits — with a focus on clients serving underserved Latino communities. <em style="font-size:.8rem;color:var(--gray-mid);">(Sample listing)</em></p>
+        <div class="scard__meta">
+          <span class="scard__meta-item">📍 Cambridge, MA</span>
+          <span class="scard__meta-item">🎯 Startups · Nonprofits · SMBs</span>
+        </div>
+        <div class="scard__actions">
+          <a href="#submit" class="scard__visit">Visit Business</a>
+          <div class="scard__social"><a href="#" title="LinkedIn">in</a><a href="#" title="GitHub">gh</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scard" data-cat="Real Estate" data-loc="Revere" data-name="Nueva Raíces Real Estate">
+      <div class="scard__ribbon">⭐ FEATURED</div>
+      <div class="scard__header">
+        <div class="scard__logo">🏠</div>
+        <div>
+          <div class="scard__name">Nueva Raíces Real Estate</div>
+          <div class="scard__tagline">Helping immigrant families plant roots in New England</div>
+          <div class="scard__cats"><span class="scard__cat">Real Estate</span><span class="scard__cat">Residential · Commercial</span></div>
+        </div>
+      </div>
+      <div class="scard__body">
+        <p class="scard__desc">Colombian-owned real estate brokerage serving Revere, East Boston, and Greater Boston. Specializes in guiding first-generation immigrant families through the homebuying process — financing to closing — entirely in Spanish, with deep ties to the Colombian and wider Latino community. <em style="font-size:.8rem;color:var(--gray-mid);">(Sample listing)</em></p>
+        <div class="scard__meta">
+          <span class="scard__meta-item">📍 Revere · East Boston · Greater Boston</span>
+          <span class="scard__meta-item">🌐 EN · ES Bilingual agents</span>
+        </div>
+        <div class="scard__actions">
+          <a href="#submit" class="scard__visit">Visit Business</a>
+          <div class="scard__social"><a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /sponsoredGrid -->
+
+  <!-- Upgrade nudge -->
+  <div class="upgrade-strip" style="margin-top:32px;">
+    <span style="font-size:1.4rem;flex-shrink:0;">🇨🇴</span>
+    <div class="upgrade-strip__text">
+      <strong>Own a Colombian business in New England?</strong>
+      <p>Get your business featured first — with logo, full profile, and direct links. Sponsored listings get 3× more visibility.</p>
+    </div>
+    <a href="#submit" class="btn-co-yellow" style="flex-shrink:0;padding:10px 22px;">Get Featured</a>
+  </div>
+
+  <!-- ═══ BASIC LISTINGS ══════════════════════════ -->
+  <div class="dir-section-head">
+    <h2>All Businesses</h2>
+    <span class="dir-count" id="basicCount">12 businesses</span>
+  </div>
+  <div class="basic-grid" id="basicGrid">
+
+    <div class="bcard" data-cat="Food &amp; Beverage" data-loc="East Boston" data-name="Mi Rancho Restaurant">
+      <div class="bcard__top"><div class="bcard__icon">🍖</div><div><div class="bcard__name">Mi Rancho Restaurant</div><div class="bcard__cat">Food &amp; Beverage</div></div></div>
+      <p class="bcard__desc">Long-standing Colombian restaurant in East Boston serving traditional grilled meats, arepas, and hearty stews that have made it a community anchor for decades.</p>
+      <div class="bcard__foot"><span class="bcard__loc">📍 East Boston, MA</span><a href="#submit" class="bcard__link">View →</a></div>
+    </div>
+
+    <div class="bcard" data-cat="Beauty &amp; Personal Care" data-loc="East Boston" data-name="Marlen Beauty Salon">
+      <div class="bcard__top"><div class="bcard__icon">✂️</div><div><div class="bcard__name">Marlen Beauty Salon</div><div class="bcard__cat">Beauty &amp; Personal Care</div></div></div>
+      <p class="bcard__desc">Colombian-owned beauty salon in East Boston offering haircuts, styling, coloring, and nail services. A trusted neighborhood institution serving the Latin community.</p>
+      <div class="bcard__foot"><span class="bcard__loc">📍 East Boston, MA</span><a href="#submit" class="bcard__link">View →</a></div>
+    </div>
+
+    <div class="bcard" data-cat="Food &amp; Beverage" data-loc="East Boston" data-name="Café Gigú">
+      <div class="bcard__top"><div class="bcard__icon">☕</div><div><div class="bcard__name">Café Gigú</div><div class="bcard__cat">Food &amp; Beverage</div></div></div>
+      <p class="bcard__desc">Cozy Colombian café known for rich tinto, buñuelos, empanadas, and a warm atmosphere. A neighborhood favorite for breakfast and afternoon snacks in East Boston.</p>
+      <div class="bcard__foot"><span class="bcard__loc">📍 East Boston, MA</span><a href="#submit" class="bcard__link">View →</a></div>
+    </div>
+
+    <div class="bcard" data-cat="Arts &amp; Culture" data-loc="East Boston" data-name="Bajucol Dance Troupe">
+      <div class="bcard__top"><div class="bcard__icon">💃</div><div><div class="bcard__name">Bajucol</div><div class="bcard__cat">Arts &amp; Culture</div></div></div>
+      <p class="bcard__desc">East Boston-based Colombian folkloric dance troupe founded in 1995. Performers of traditional cumbia, bambuco, and vallenato at city events across New England.</p>
+      <div class="bcard__foot"><span class="bcard__loc">📍 East Boston, MA</span><a href="#submit" class="bcard__link">View →</a></div>
+    </div>
+
+    <div class="bcard" data-cat="Professional Services" data-loc="Boston" data-name="Andes Legal Group">
+      <div class="bcard__top"><div class="bcard__icon">⚖️</div><div><div class="bcard__name">Andes Legal Group</div><div class="bcard__cat">Professional Services</div></div></div>
+      <p class="bcard__desc">Immigration and small business law firm. Services include visa applications, business formation, contracts, and bilingual legal counsel. <em style="font-size:.78rem;opacity:.7">(Sample)</em></p>
+      <div class="bcard__foot"><span class="bcard__loc">📍 Boston, MA</span><a href="#submit" class="bcard__link">View →</a></div>
+    </div>
+
+    <div class="bcard" data-cat="Finance &amp; Accounting" data-loc="Newton" data-name="Sabana Tax">
+      <div class="bcard__top"><div class="bcard__icon">🧾</div><div><div class="bcard__name">Sabana Tax &amp; Accounting</div><div class="bcard__cat">Finance &amp; Accounting</div></div></div>
+      <p class="bcard__desc">Bilingual CPA firm offering personal and business tax preparation, bookkeeping, and financial planning for immigrant entrepreneurs. <em style="font-size:.78rem;opacity:.7">(Sample)</em></p>
+      <div class="bcard__foot"><span class="bcard__loc">📍 Newton, MA</span><a href="#submit" class="bcard__link">View →</a></div>
+    </div>
+
+    <div class="bcard" data-cat="Construction &amp; Trades" data-loc="Revere" data-name="Cordillera Construction">
+      <div class="bcard__top"><div class="bcard__icon">🔨</div><div><div class="bcard__name">Cordillera Construction</div><div class="bcard__cat">Construction &amp; Trades</div></div></div>
+      <p class="bcard__desc">General contractor specializing in residential renovation, kitchen remodels, and bathroom upgrades across Greater Boston. Colombian-owned, licensed and insured. <em style="font-size:.78rem;opacity:.7">(Sample)</em></p>
+      <div class="bcard__foot"><span class="bcard__loc">📍 Revere, MA</span><a href="#submit" class="bcard__link">View →</a></div>
+    </div>
+
+    <div class="bcard" data-cat="Health &amp; Wellness" data-loc="Somerville" data-name="Bienestar Family Health">
+      <div class="bcard__top"><div class="bcard__icon">🏥</div><div><div class="bcard__name">Bienestar Family Health</div><div class="bcard__cat">Health &amp; Wellness</div></div></div>
+      <p class="bcard__desc">Bilingual primary care practice offering family medicine and preventive health for Latino patients. All staff speak Spanish; accepting new patients. <em style="font-size:.78rem;opacity:.7">(Sample)</em></p>
+      <div class="bcard__foot"><span class="bcard__loc">📍 Somerville, MA</span><a href="#submit" class="bcard__link">View →</a></div>
+    </div>
+
+    <div class="bcard" data-cat="Technology" data-loc="Boston" data-name="Orinoco Digital">
+      <div class="bcard__top"><div class="bcard__icon">📱</div><div><div class="bcard__name">Orinoco Digital</div><div class="bcard__cat">Technology</div></div></div>
+      <p class="bcard__desc">Digital marketing agency helping small businesses grow online with SEO, social media, paid advertising, and Spanish-language content creation. <em style="font-size:.78rem;opacity:.7">(Sample)</em></p>
+      <div class="bcard__foot"><span class="bcard__loc">📍 Boston, MA</span><a href="#submit" class="bcard__link">View →</a></div>
+    </div>
+
+    <div class="bcard" data-cat="Food &amp; Beverage" data-loc="Cambridge" data-name="La Finca Catering">
+      <div class="bcard__top"><div class="bcard__icon">🎉</div><div><div class="bcard__name">La Finca Catering</div><div class="bcard__cat">Food &amp; Beverage</div></div></div>
+      <p class="bcard__desc">Colombian catering company for events 20–300 guests. Authentic bandeja paisa, arepas, buñuelos, chicharrón, and custom menus for weddings and corporate events. <em style="font-size:.78rem;opacity:.7">(Sample)</em></p>
+      <div class="bcard__foot"><span class="bcard__loc">📍 Cambridge, MA</span><a href="#submit" class="bcard__link">View →</a></div>
+    </div>
+
+    <div class="bcard" data-cat="Education" data-loc="East Boston" data-name="Esmeralda Tutoring">
+      <div class="bcard__top"><div class="bcard__icon">📚</div><div><div class="bcard__name">Esmeralda Tutoring</div><div class="bcard__cat">Education</div></div></div>
+      <p class="bcard__desc">Bilingual tutoring for K–12 in math, Spanish, English, and science. Founded by a Colombian educator with 15+ years of experience. In-home and online sessions. <em style="font-size:.78rem;opacity:.7">(Sample)</em></p>
+      <div class="bcard__foot"><span class="bcard__loc">📍 East Boston, MA</span><a href="#submit" class="bcard__link">View →</a></div>
+    </div>
+
+    <div class="bcard" data-cat="Beauty &amp; Personal Care" data-loc="Revere" data-name="Salon Cartagena">
+      <div class="bcard__top"><div class="bcard__icon">💇</div><div><div class="bcard__name">Salon Cartagena</div><div class="bcard__cat">Beauty &amp; Personal Care</div></div></div>
+      <p class="bcard__desc">Full-service hair and beauty salon. Colombian-owned, offering cuts, braids, keratin treatments, and facials to the Revere and East Boston community. <em style="font-size:.78rem;opacity:.7">(Sample)</em></p>
+      <div class="bcard__foot"><span class="bcard__loc">📍 Revere, MA</span><a href="#submit" class="bcard__link">View →</a></div>
+    </div>
+
+  </div><!-- /basicGrid -->
+
+  <div id="noResults" style="text-align:center;padding:56px 0;color:var(--gray-mid);display:none;">
+    <p style="font-size:1.1rem;font-weight:600;">No businesses found for that search.</p>
+    <p style="font-size:.9rem;">Try a different filter, or <a href="#submit" style="color:var(--co-blue);">add your business</a>.</p>
+  </div>
+
+  <!-- ═══ LIST YOUR BUSINESS ══════════════════════ -->
+  <div class="dir-submit" id="submit">
+    <h2>🇨🇴 List Your Business</h2>
+    <p>Colombian entrepreneur in New England? Join the directory and connect with the community. Basic listings are free.</p>
+    <div class="tier-compare">
+      <div class="tier-pill">
+        <h4>📋 Basic — Free</h4>
+        <ul><li>Name, category &amp; location</li><li>Short description</li><li>Website link</li><li>Listed in directory</li></ul>
+      </div>
+      <div class="tier-pill featured-tier">
+        <h4>⭐ Featured — Sponsored</h4>
+        <ul><li>Everything in Basic</li><li>Appears first in directory</li><li>Full profile: logo, tagline, bio</li><li>Phone &amp; social media links</li><li>Gold featured badge</li><li>CTA "Visit Business" button</li><li>NEACOL newsletter feature</li></ul>
+      </div>
+    </div>
+    <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:32px;max-width:580px;margin:0 auto;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div><label style="color:rgba(255,255,255,.65);font-size:.83rem;display:block;margin-bottom:5px;">Business Name *</label>
+          <input type="text" placeholder="Your business" style="width:100%;padding:10px 14px;border-radius:6px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.07);color:#fff;font-family:inherit;font-size:.9rem;outline:none;"></div>
+        <div><label style="color:rgba(255,255,255,.65);font-size:.83rem;display:block;margin-bottom:5px;">Category *</label>
+          <select style="width:100%;padding:10px 14px;border-radius:6px;border:1px solid rgba(255,255,255,.18);background:#001a4d;color:rgba(255,255,255,.85);font-family:inherit;font-size:.9rem;outline:none;">
+            <option>Food &amp; Beverage</option><option>Professional Services</option><option>Technology</option>
+            <option>Real Estate</option><option>Beauty &amp; Personal Care</option><option>Health &amp; Wellness</option>
+            <option>Finance &amp; Accounting</option><option>Construction &amp; Trades</option><option>Education</option><option>Other</option>
+          </select></div>
+      </div>
+      <div style="margin-top:12px;"><label style="color:rgba(255,255,255,.65);font-size:.83rem;display:block;margin-bottom:5px;">City / Town *</label>
+        <input type="text" placeholder="e.g. East Boston, Lowell, Cambridge…" style="width:100%;padding:10px 14px;border-radius:6px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.07);color:#fff;font-family:inherit;font-size:.9rem;outline:none;"></div>
+      <div style="margin-top:12px;"><label style="color:rgba(255,255,255,.65);font-size:.83rem;display:block;margin-bottom:5px;">Contact Email *</label>
+        <input type="email" placeholder="you@example.com" style="width:100%;padding:10px 14px;border-radius:6px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.07);color:#fff;font-family:inherit;font-size:.9rem;outline:none;"></div>
+      <div style="margin-top:12px;display:flex;gap:20px;">
+        <label style="display:flex;align-items:center;gap:7px;color:rgba(255,255,255,.72);font-size:.87rem;cursor:pointer;"><input type="radio" name="listType" value="basic" checked> Free Basic</label>
+        <label style="display:flex;align-items:center;gap:7px;color:var(--co-yellow);font-size:.87rem;cursor:pointer;font-weight:700;"><input type="radio" name="listType" value="sponsored"> ⭐ Featured Sponsored</label>
+      </div>
+      <button onclick="alert('Thank you! Connect this form to Formspree, Airtable, or your email backend.')"
+        style="margin-top:22px;width:100%;padding:13px;background:var(--co-yellow);color:#0a1640;font-family:inherit;font-size:.95rem;font-weight:800;border:none;border-radius:6px;cursor:pointer;">
+        Submit My Business →
+      </button>
+      <p style="font-size:.75rem;color:rgba(255,255,255,.35);text-align:center;margin-top:8px;">Or email <a href="mailto:info@neacol.org" style="color:rgba(252,209,22,.6);">info@neacol.org</a></p>
+    </div>
+  </div>
+
+</div><!-- /container -->
+</main>
+
+<div id="site-footer"></div>
+
+<script>
+  window.NEACOL_ROOT = '../';
+  var searchInput    = document.getElementById('dirSearch');
+  var catSelect      = document.getElementById('dirCatFilter');
+  var locSelect      = document.getElementById('dirLocFilter');
+  var pills          = document.querySelectorAll('.filter-pill');
+  var sponsoredCards = Array.from(document.querySelectorAll('#sponsoredGrid .scard'));
+  var basicCards     = Array.from(document.querySelectorAll('#basicGrid .bcard'));
+  var noResults      = document.getElementById('noResults');
+  var sponsoredCount = document.getElementById('sponsoredCount');
+  var basicCount     = document.getElementById('basicCount');
+  var activeCat      = '';
+
+  function norm(s){ return (s||'').toLowerCase().replace(/&amp;/g,'&'); }
+
+  function run() {
+    var q   = norm(searchInput.value);
+    var cat = norm(activeCat || catSelect.value);
+    var loc = norm(locSelect.value);
+    var sc=0, bc=0;
+    function ok(c){
+      return (!q   || norm(c.textContent).includes(q))
+          && (!cat || norm(c.dataset.cat||'').includes(cat))
+          && (!loc || norm(c.dataset.loc||'').includes(loc));
+    }
+    sponsoredCards.forEach(function(c){ var s=ok(c); c.style.display=s?'':'none'; if(s)sc++; });
+    basicCards.forEach(function(c){ var s=ok(c); c.style.display=s?'':'none'; if(s)bc++; });
+    sponsoredCount.textContent = sc+' business'+(sc!==1?'es':'');
+    basicCount.textContent     = bc+' business'+(bc!==1?'es':'');
+    noResults.style.display    = (sc+bc===0)?'block':'none';
+  }
+
+  searchInput.addEventListener('input', run);
+  catSelect.addEventListener('change', function(){ activeCat=''; pills.forEach(function(p){p.classList.remove('active');}); document.querySelector('.filter-pill[data-cat=""]').classList.add('active'); run(); });
+  locSelect.addEventListener('change', run);
+  pills.forEach(function(pill){
+    pill.addEventListener('click', function(){
+      activeCat = this.dataset.cat;
+      pills.forEach(function(p){p.classList.remove('active');}); this.classList.add('active');
+      catSelect.value = activeCat; run();
+    });
+  });
+</script>
+<script src="../js/components.js"></script>
+</body>
+</html>

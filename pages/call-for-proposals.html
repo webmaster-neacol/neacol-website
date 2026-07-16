@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Call for Proposals – NEACOL</title>
+  <link rel="icon" type="image/png" href="https://neacol.org/wp-content/uploads/2023/03/8-compress.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .accordion { border:1px solid var(--gray-light);border-radius:8px;overflow:hidden;margin-bottom:8px; }
+    .accordion__btn {
+      width:100%;text-align:left;padding:16px 20px;background:var(--white);border:none;
+      font-family:inherit;font-size:.95rem;font-weight:600;color:var(--navy);cursor:pointer;
+      display:flex;justify-content:space-between;align-items:center;
+    }
+    .accordion__btn:hover { background:var(--gold-light); }
+    .accordion__icon { font-size:1.1rem;transition:transform .25s;flex-shrink:0; }
+    .accordion__body { display:none;padding:16px 20px 20px;font-size:.92rem;color:var(--text-light);border-top:1px solid var(--gray-light); }
+    .accordion__body ul { list-style:disc;padding-left:20px; }
+    .accordion__body li { margin-bottom:6px; }
+    .accordion.open .accordion__body { display:block; }
+    .accordion.open .accordion__icon { transform:rotate(45deg); }
+    .timeline-row { display:flex;gap:0;flex-direction:column;margin:24px 0; }
+    .timeline-item { display:flex;gap:16px;align-items:flex-start;padding:12px 0;border-left:3px solid var(--gold);padding-left:20px;margin-left:16px;position:relative; }
+    .timeline-item::before { content:'';position:absolute;left:-7px;top:16px;width:12px;height:12px;border-radius:50%;background:var(--gold); }
+    .timeline-date { font-size:.82rem;font-weight:700;color:var(--gold);white-space:nowrap;min-width:120px; }
+    .timeline-text { font-size:.9rem;color:var(--text-light); }
+  </style>
+</head>
+<body>
+<div id="site-header"></div>
+<div class="page-banner">
+  <div class="container text-center">
+    <span class="label" style="color:var(--gold);">Our Work</span>
+    <h1>Call for Proposals</h1>
+  </div>
+</div>
+<main class="section">
+  <div class="container" style="max-width:840px;">
+
+    <img src="https://neacol.org/wp-content/uploads/2023/05/Screen-Shot-2023-04-10-at-2.50.24-PM-e1681750015191.png" alt="NEACOL" style="max-width:200px;margin:0 auto 32px;display:block;">
+
+    <div class="highlight-box" style="margin-bottom:40px;">
+      <h3 style="color:var(--navy);">Convocatoria de Propuestas NEACOL 2026</h3>
+      <h4 style="color:var(--gold);margin:6px 0 12px;font-size:1.1rem;">Nutrición y Bienestar de la Niñez y Juventud en Colombia</h4>
+      <p>Se realizará un seminario web informativo para las organizaciones interesadas en postularse el <strong>miércoles 13 de mayo de 2026 a las 11:00 a.m.</strong> (hora de Colombia).</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;">
+        <a href="https://zoom.us/meeting/register/IdlljYo7TsW8f-TJlY4rkQ" target="_blank" rel="noopener" class="btn btn--gold">Register for Webinar</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf8hQ3VfeXt5ahvhQDXV3a5Q4kjg-tsC3VBdboyIFlPAzB8JA/viewform" target="_blank" rel="noopener" class="btn btn--navy">Application Form</a>
+      </div>
+    </div>
+
+    <!-- Accordion sections -->
+    <div class="accordion open">
+      <button class="accordion__btn" onclick="toggleAcc(this)">Prioridades de financiamiento <span class="accordion__icon">+</span></button>
+      <div class="accordion__body">
+        <p>El programa de financiamiento de NEACOL responde a nuestra misión de apoyar iniciativas que mejoren las condiciones de vida de niños, niñas y jóvenes en situación de vulnerabilidad en Colombia. NEACOL brinda apoyo financiero a organizaciones sin fines de lucro cuyos proyectos estén alineados con tres áreas prioritarias:</p>
+        <ul><li>Salud</li><li>Educación</li><li>Nutrición</li></ul>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="accordion__btn" onclick="toggleAcc(this)">Objetivo de la Convocatoria 2026–2027 <span class="accordion__icon">+</span></button>
+      <div class="accordion__body">
+        <p>Esta convocatoria pone especial énfasis en proyectos que respondan a los desafíos de los territorios rurales y de las comunidades con diversidad étnica. Los objetivos son:</p>
+        <ul>
+          <li>Prevenir y reducir la desnutrición infantil</li>
+          <li>Fortalecer la seguridad alimentaria</li>
+          <li>Promover el bienestar integral de niños, niñas y jóvenes (0 a 18 años)</li>
+          <li>Integrar enfoques comunitarios, interculturales y sostenibles</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="accordion__btn" onclick="toggleAcc(this)">Contexto y situación actual <span class="accordion__icon">+</span></button>
+      <div class="accordion__body">
+        <p>La desnutrición en Colombia refleja desigualdades en el acceso a alimentos, agua potable, educación y oportunidades económicas. Actualmente 1 de cada 9 niños menores de 5 años presenta desnutrición crónica. Las comunidades más afectadas son:</p>
+        <ul>
+          <li>Zonas rurales</li>
+          <li>Comunidades indígenas</li>
+          <li>Poblaciones históricamente marginadas</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="accordion__btn" onclick="toggleAcc(this)">Criterios de priorización <span class="accordion__icon">+</span></button>
+      <div class="accordion__body">
+        <p>NEACOL dará preferencia a propuestas que demuestren:</p>
+        <ul>
+          <li>Un componente de acompañamiento educativo en nutrición</li>
+          <li>Una estrategia clara de sostenibilidad a largo plazo</li>
+          <li>Participación activa de la comunidad (autogestión comunitaria)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="accordion__btn" onclick="toggleAcc(this)">Montos de las subvenciones <span class="accordion__icon">+</span></button>
+      <div class="accordion__body">
+        <p>Se otorgarán subvenciones de hasta <strong>USD 10,000</strong>, sujetas a la disponibilidad de fondos recaudados durante 2026. Debido a que los recursos son limitados, esta convocatoria será altamente competitiva. Los proyectos seleccionados deberán iniciar su ejecución en <strong>enero de 2027</strong>.</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="accordion__btn" onclick="toggleAcc(this)">Cronograma <span class="accordion__icon">+</span></button>
+      <div class="accordion__body">
+        <div class="timeline-row">
+          <div class="timeline-item"><span class="timeline-date">5 May 2026</span><span class="timeline-text">Apertura de la convocatoria</span></div>
+          <div class="timeline-item"><span class="timeline-date">13 May 2026</span><span class="timeline-text">Webinar informativo (11:00 a.m. hora Colombia) — <a href="https://zoom.us/meeting/register/IdlljYo7TsW8f-TJlY4rkQ" target="_blank" rel="noopener">Register here</a></span></div>
+          <div class="timeline-item"><span class="timeline-date">6 Jun 2026</span><span class="timeline-text">Cartas de intención</span></div>
+          <div class="timeline-item"><span class="timeline-date">3 Jul 2026</span><span class="timeline-text">Notificación de preseleccionados</span></div>
+          <div class="timeline-item"><span class="timeline-date">1 Aug 2026</span><span class="timeline-text">Propuestas completas</span></div>
+          <div class="timeline-item"><span class="timeline-date">13 Sep 2026</span><span class="timeline-text">Selección final</span></div>
+          <div class="timeline-item"><span class="timeline-date">30 Sep 2026</span><span class="timeline-text">Anuncio de ganadores</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="accordion__btn" onclick="toggleAcc(this)">¿Quiénes pueden aplicar? <span class="accordion__icon">+</span></button>
+      <div class="accordion__body">
+        <p>Pueden postularse <strong>organizaciones sin ánimo de lucro legalmente constituidas en Colombia</strong>.</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="accordion__btn" onclick="toggleAcc(this)">Criterios de selección <span class="accordion__icon">+</span></button>
+      <div class="accordion__body">
+        <p>Las propuestas serán evaluadas con base en: Relevancia · Potencial de impacto · Equidad · Viabilidad · Participación comunitaria · Innovación.</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="accordion__btn" onclick="toggleAcc(this)">Cómo aplicar <span class="accordion__icon">+</span></button>
+      <div class="accordion__body">
+        <p>Se proporcionarán formularios y guías a las organizaciones interesadas. <strong>NEACOL evaluará únicamente las primeras 50 propuestas recibidas.</strong> Una vez alcanzado este número, el sistema cerrará automáticamente.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf8hQ3VfeXt5ahvhQDXV3a5Q4kjg-tsC3VBdboyIFlPAzB8JA/viewform" target="_blank" rel="noopener" class="btn btn--gold" style="margin-top:16px;display:inline-block;">Formulario de aplicación</a>
+      </div>
+    </div>
+
+    <div style="background:var(--navy);color:#fff;border-radius:10px;padding:32px;margin-top:32px;text-align:center;">
+      <h3 style="color:var(--gold);margin-bottom:8px;">Mensaje final</h3>
+      <p style="opacity:.9;">Invertir en nutrición es invertir en el futuro. En NEACOL creemos que apoyar la nutrición de niños, niñas y jóvenes es apostar por un país más justo, inclusivo y con mayores oportunidades para todos.</p>
+    </div>
+
+  </div>
+</main>
+<div id="site-footer"></div>
+<script>
+  window.NEACOL_ROOT = '../';
+  function toggleAcc(btn) {
+    btn.closest('.accordion').classList.toggle('open');
+  }
+</script>
+<script src="../js/components.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate – NEACOL</title>
+  <meta name="description" content="Donate to NEACOL and help support Colombian children through education, health, and nutrition programs.">
+  <link rel="icon" type="image/png" href="https://neacol.org/wp-content/uploads/2023/03/8-compress.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .amount-grid { display:flex; gap:12px; flex-wrap:wrap; margin:16px 0; }
+    .amount-btn  { padding:12px 24px; border:2px solid var(--gray-light); border-radius:var(--radius); font-size:1rem; font-weight:700; cursor:pointer; background:var(--white); color:var(--navy); transition:all .2s; }
+    .amount-btn:hover, .amount-btn.selected { border-color:var(--gold); background:var(--gold-light); color:var(--navy); }
+  </style>
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<div class="page-banner">
+  <div class="container text-center">
+    <span class="label" style="color:var(--gold);">Support</span>
+    <h1>Donate to NEACOL</h1>
+  </div>
+</div>
+
+<main class="section">
+  <div class="container">
+
+    <div style="display:grid;grid-template-columns:1fr 1.3fr;gap:56px;align-items:start;">
+
+      <!-- Left: why donate -->
+      <div>
+        <span class="label">Your Impact</span>
+        <h2>Every Dollar Counts</h2>
+        <p>NEACOL is a 501(c)(3) nonprofit — all donations are tax-deductible. 100% of grant funds go directly to programs supporting Colombian children in need.</p>
+
+        <div style="margin:28px 0;">
+          <div style="display:flex;align-items:flex-start;gap:16px;margin-bottom:20px;">
+            <span style="font-size:1.6rem;">📚</span>
+            <div><strong>$25</strong><p style="margin:0;font-size:.9rem;color:var(--text-light);">Provides one month of educational supplies for a child in need.</p></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:16px;margin-bottom:20px;">
+            <span style="font-size:1.6rem;">🥗</span>
+            <div><strong>$50</strong><p style="margin:0;font-size:.9rem;color:var(--text-light);">Funds two weeks of nutritious school meals for a child.</p></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:16px;margin-bottom:20px;">
+            <span style="font-size:1.6rem;">🏥</span>
+            <div><strong>$100</strong><p style="margin:0;font-size:.9rem;color:var(--text-light);">Covers a health screening for five children in a rural community.</p></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:16px;">
+            <span style="font-size:1.6rem;">🌟</span>
+            <div><strong>$500+</strong><p style="margin:0;font-size:.9rem;color:var(--text-light);">Sponsors a child's full year of program participation and support.</p></div>
+          </div>
+        </div>
+
+        <img src="https://neacol.org/wp-content/uploads/2023/06/Calls-to-Action-copy-scaled.webp" alt="Donate" style="border-radius:10px;width:100%;">
+      </div>
+
+      <!-- Right: donation form -->
+      <div class="form-card">
+        <h2 style="margin-bottom:20px;">Make a Donation</h2>
+
+        <!-- Amount selector -->
+        <div class="form-group">
+          <label>Select an Amount</label>
+          <div class="amount-grid">
+            <button class="amount-btn" onclick="selectAmount(this,'25')">$25</button>
+            <button class="amount-btn" onclick="selectAmount(this,'50')">$50</button>
+            <button class="amount-btn" onclick="selectAmount(this,'100')">$100</button>
+            <button class="amount-btn" onclick="selectAmount(this,'250')">$250</button>
+            <button class="amount-btn" onclick="selectAmount(this,'500')">$500</button>
+          </div>
+          <input type="number" id="donateAmount" placeholder="Or enter custom amount ($)" style="margin-top:8px;">
+        </div>
+
+        <!-- Frequency -->
+        <div class="form-group">
+          <label>Frequency</label>
+          <div style="display:flex;gap:12px;">
+            <label style="font-weight:400;display:flex;align-items:center;gap:6px;cursor:pointer;"><input type="radio" name="freq" value="once" checked> One-time</label>
+            <label style="font-weight:400;display:flex;align-items:center;gap:6px;cursor:pointer;"><input type="radio" name="freq" value="monthly"> Monthly</label>
+            <label style="font-weight:400;display:flex;align-items:center;gap:6px;cursor:pointer;"><input type="radio" name="freq" value="annual"> Annual</label>
+          </div>
+        </div>
+
+        <!-- Donor info -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div class="form-group" style="margin-bottom:0;">
+            <label>First Name *</label>
+            <input type="text" placeholder="First">
+          </div>
+          <div class="form-group" style="margin-bottom:0;">
+            <label>Last Name *</label>
+            <input type="text" placeholder="Last">
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-top:16px;">
+          <label>Email Address *</label>
+          <input type="email" placeholder="you@example.com">
+        </div>
+
+        <!-- Payment placeholder -->
+        <div class="form-group">
+          <label>Payment</label>
+          <div style="border:1px solid var(--gray-light);border-radius:var(--radius);padding:14px 16px;background:var(--off-white);font-size:.9rem;color:var(--gray-mid);">
+            💳 Credit / Debit Card — Connect your payment processor here (Stripe, PayPal, etc.)
+          </div>
+        </div>
+
+        <button class="btn btn--gold" style="width:100%;font-size:1rem;padding:14px;" onclick="alert('Thank you for your generosity! Connect a payment processor to enable real donations.')">
+          Donate Now
+        </button>
+        <p style="font-size:.78rem;color:var(--gray-mid);text-align:center;margin-top:10px;">NEACOL is a 501(c)(3) organization. Donations are tax-deductible to the extent permitted by law.</p>
+      </div>
+
+    </div>
+
+    <!-- Other ways to give -->
+    <div style="margin-top:72px;">
+      <div class="text-center section__header">
+        <h2>Other Ways to Give</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:24px;">
+        <div class="committee-card" style="background:var(--off-white);border-radius:10px;padding:28px;border:1px solid var(--gray-light);">
+          <div style="font-size:1.8rem;margin-bottom:10px;">🏢</div>
+          <h4 style="color:var(--navy);margin-bottom:6px;">Corporate Giving</h4>
+          <p style="font-size:.88rem;color:var(--text-light);">Many employers match charitable donations. Check with your HR department and double your impact.</p>
+        </div>
+        <div style="background:var(--off-white);border-radius:10px;padding:28px;border:1px solid var(--gray-light);">
+          <div style="font-size:1.8rem;margin-bottom:10px;">🎗️</div>
+          <h4 style="color:var(--navy);margin-bottom:6px;">Sponsorship</h4>
+          <p style="font-size:.88rem;color:var(--text-light);"><a href="sponsorship.html">Sponsor an event</a> and get visibility for your business while supporting Colombian children.</p>
+        </div>
+        <div style="background:var(--off-white);border-radius:10px;padding:28px;border:1px solid var(--gray-light);">
+          <div style="font-size:1.8rem;margin-bottom:10px;">🛍️</div>
+          <h4 style="color:var(--navy);margin-bottom:6px;">Shop for Good</h4>
+          <p style="font-size:.88rem;color:var(--text-light);"><a href="shop.html">Visit our shop</a> to purchase NEACOL merchandise. Proceeds support our programs.</p>
+        </div>
+        <div style="background:var(--off-white);border-radius:10px;padding:28px;border:1px solid var(--gray-light);">
+          <div style="font-size:1.8rem;margin-bottom:10px;">📬</div>
+          <h4 style="color:var(--navy);margin-bottom:6px;">Mail a Check</h4>
+          <p style="font-size:.88rem;color:var(--text-light);">Make checks payable to <strong>NEACOL</strong> and mail to: P.O. BOX 920573, Needham, MA 02492.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<div id="site-footer"></div>
+
+<script>
+  window.NEACOL_ROOT = '../';
+  function selectAmount(btn, val) {
+    document.querySelectorAll('.amount-btn').forEach(function(b){ b.classList.remove('selected'); });
+    btn.classList.add('selected');
+    document.getElementById('donateAmount').value = val;
+  }
+</script>
+<script src="../js/components.js"></script>
+</body>
+</html>
