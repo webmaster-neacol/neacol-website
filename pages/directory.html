@@ -381,19 +381,19 @@
 
     <div class="dir-hero__stats">
       <div class="dir-stat-cell">
-        <div class="dir-stat-cell__n">18+</div>
+        <div class="dir-stat-cell__n" id="dirStatBusinesses">–</div>
         <div class="dir-stat-cell__l">Businesses</div>
       </div>
       <div class="dir-stat-cell">
-        <div class="dir-stat-cell__n">7</div>
+        <div class="dir-stat-cell__n" id="dirStatCities">–</div>
         <div class="dir-stat-cell__l">Cities</div>
       </div>
       <div class="dir-stat-cell">
-        <div class="dir-stat-cell__n">8</div>
+        <div class="dir-stat-cell__n" id="dirStatCategories">–</div>
         <div class="dir-stat-cell__l">Categories</div>
       </div>
       <div class="dir-stat-cell">
-        <div class="dir-stat-cell__n">6</div>
+        <div class="dir-stat-cell__n" id="dirStatSponsored">–</div>
         <div class="dir-stat-cell__l">Sponsored</div>
       </div>
     </div>
@@ -421,39 +421,12 @@
       </div>
       <select class="dir-filter" id="dirCatFilter" aria-label="Filter by category">
         <option value="">All Categories</option>
-        <option>Food &amp; Beverage</option>
-        <option>Beauty &amp; Personal Care</option>
-        <option>Professional Services</option>
-        <option>Technology</option>
-        <option>Real Estate</option>
-        <option>Health &amp; Wellness</option>
-        <option>Finance &amp; Accounting</option>
-        <option>Arts &amp; Culture</option>
-        <option>Construction &amp; Trades</option>
-        <option>Education</option>
       </select>
       <select class="dir-filter" id="dirLocFilter" aria-label="Filter by location">
         <option value="">All Locations</option>
-        <option>Boston</option>
-        <option>East Boston</option>
-        <option>Cambridge</option>
-        <option>Lowell</option>
-        <option>Revere</option>
-        <option>Somerville</option>
-        <option>Newton</option>
       </select>
     </div>
-    <div class="dir-filter-pills">
-      <button class="filter-pill active" data-cat="">All</button>
-      <button class="filter-pill" data-cat="Food &amp; Beverage">🍽 Food &amp; Beverage</button>
-      <button class="filter-pill" data-cat="Professional Services">💼 Professional Services</button>
-      <button class="filter-pill" data-cat="Technology">💻 Technology</button>
-      <button class="filter-pill" data-cat="Beauty &amp; Personal Care">💅 Beauty</button>
-      <button class="filter-pill" data-cat="Real Estate">🏠 Real Estate</button>
-      <button class="filter-pill" data-cat="Health &amp; Wellness">🏥 Health</button>
-      <button class="filter-pill" data-cat="Finance &amp; Accounting">💰 Finance</button>
-      <button class="filter-pill" data-cat="Construction &amp; Trades">🔨 Construction</button>
-    </div>
+    <div class="dir-filter-pills" id="dirFilterPills"></div>
   </div>
 </div>
 
@@ -466,147 +439,7 @@
     <span class="badge-featured">⭐ Sponsored</span>
     <span class="dir-count" id="sponsoredCount">6 businesses</span>
   </div>
-  <div class="sponsored-grid" id="sponsoredGrid">
-
-    <div class="scard" data-cat="Food &amp; Beverage" data-loc="East Boston" data-name="La Sultana Bakery">
-      <div class="scard__ribbon">⭐ FEATURED</div>
-      <div class="scard__header">
-        <div class="scard__logo">🥐</div>
-        <div>
-          <div class="scard__name">La Sultana Bakery</div>
-          <div class="scard__tagline">Colombian pastries, breads &amp; community hub since 1993</div>
-          <div class="scard__cats"><span class="scard__cat">Food &amp; Beverage</span><span class="scard__cat">Bakery · Café</span></div>
-        </div>
-      </div>
-      <div class="scard__body">
-        <p class="scard__desc">One of East Boston's most beloved institutions, La Sultana Bakery has served the Colombian and broader Latino community from Maverick Square since 1993. Founded by Amelia Sanchez, celebrated for authentic Colombian sweets and baked goods — and long a welcoming space for newcomers seeking community.</p>
-        <div class="scard__meta">
-          <span class="scard__meta-item">📍 Maverick Square, East Boston, MA</span>
-          <span class="scard__meta-item">🗓 Est. 1993 · 30+ years of community</span>
-        </div>
-        <div class="scard__actions">
-          <a href="#submit" class="scard__visit">Visit Business</a>
-          <div class="scard__social"><a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="scard" data-cat="Food &amp; Beverage" data-loc="East Boston" data-name="El Peñol">
-      <div class="scard__ribbon">⭐ FEATURED</div>
-      <div class="scard__header">
-        <div class="scard__logo">🍲</div>
-        <div>
-          <div class="scard__name">El Peñol</div>
-          <div class="scard__tagline">Authentic Colombian cuisine in the heart of East Boston</div>
-          <div class="scard__cats"><span class="scard__cat">Food &amp; Beverage</span><span class="scard__cat">Colombian Restaurant</span></div>
-        </div>
-      </div>
-      <div class="scard__body">
-        <p class="scard__desc">El Peñol brings the flavors of Colombia to East Boston's vibrant dining scene. The menu features classic dishes including yuca fritas, salmon soup, and grilled chicken in a creamy cilantro-mushroom sauce. A neighborhood favorite known for generous portions and a warm family atmosphere.</p>
-        <div class="scard__meta">
-          <span class="scard__meta-item">📍 East Boston, MA</span>
-          <span class="scard__meta-item">🍽 Dine-in · Takeout</span>
-        </div>
-        <div class="scard__actions">
-          <a href="#submit" class="scard__visit">Visit Business</a>
-          <div class="scard__social"><a href="#" title="Facebook">f</a><a href="#" title="Google">G</a></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="scard" data-cat="Food &amp; Beverage" data-loc="Lowell" data-name="Panela Restaurant">
-      <div class="scard__ribbon">⭐ FEATURED</div>
-      <div class="scard__header">
-        <div class="scard__logo">🌿</div>
-        <div>
-          <div class="scard__name">Panela</div>
-          <div class="scard__tagline">Colombian flavors bringing a taste of home to Lowell</div>
-          <div class="scard__cats"><span class="scard__cat">Food &amp; Beverage</span><span class="scard__cat">Colombian Restaurant</span></div>
-        </div>
-      </div>
-      <div class="scard__body">
-        <p class="scard__desc">Panela serves the Colombian community of Lowell with traditional recipes rooted in the flavors of home. Named for the unrefined cane sugar that sweetens countless Colombian dishes, it has become a go-to for authentic cooking in the Merrimack Valley.</p>
-        <div class="scard__meta">
-          <span class="scard__meta-item">📍 Lowell, MA</span>
-          <span class="scard__meta-item">🍽 Dine-in · Takeout · Catering</span>
-        </div>
-        <div class="scard__actions">
-          <a href="#submit" class="scard__visit">Visit Business</a>
-          <div class="scard__social"><a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="scard" data-cat="Professional Services" data-loc="Boston" data-name="Andina Consulting Group">
-      <div class="scard__ribbon">⭐ FEATURED</div>
-      <div class="scard__header">
-        <div class="scard__logo">📊</div>
-        <div>
-          <div class="scard__name">Andina Consulting Group</div>
-          <div class="scard__tagline">Strategy, finance &amp; operations for growing businesses</div>
-          <div class="scard__cats"><span class="scard__cat">Professional Services</span><span class="scard__cat">Bilingual Advisory</span></div>
-        </div>
-      </div>
-      <div class="scard__body">
-        <p class="scard__desc">Boston-based management consulting firm founded by Colombian professionals. Specializes in growth strategy, financial modeling, and operational efficiency for mid-market companies. Bridges the US and Latin American business worlds with fully bilingual advisory services. <em style="font-size:.8rem;color:var(--gray-mid);">(Sample listing)</em></p>
-        <div class="scard__meta">
-          <span class="scard__meta-item">📍 Boston, MA (Seaport District)</span>
-          <span class="scard__meta-item">🌐 EN · ES Bilingual</span>
-        </div>
-        <div class="scard__actions">
-          <a href="#submit" class="scard__visit">Visit Business</a>
-          <div class="scard__social"><a href="#" title="LinkedIn">in</a><a href="#" title="Twitter">𝕏</a></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="scard" data-cat="Technology" data-loc="Cambridge" data-name="ColTech Solutions">
-      <div class="scard__ribbon">⭐ FEATURED</div>
-      <div class="scard__header">
-        <div class="scard__logo">💻</div>
-        <div>
-          <div class="scard__name">ColTech Solutions</div>
-          <div class="scard__tagline">Software development &amp; digital transformation</div>
-          <div class="scard__cats"><span class="scard__cat">Technology</span><span class="scard__cat">Software · Web</span></div>
-        </div>
-      </div>
-      <div class="scard__body">
-        <p class="scard__desc">Cambridge-based software and digital transformation agency founded by Colombian engineers. Builds custom web applications, mobile products, and data platforms for startups and nonprofits — with a focus on clients serving underserved Latino communities. <em style="font-size:.8rem;color:var(--gray-mid);">(Sample listing)</em></p>
-        <div class="scard__meta">
-          <span class="scard__meta-item">📍 Cambridge, MA</span>
-          <span class="scard__meta-item">🎯 Startups · Nonprofits · SMBs</span>
-        </div>
-        <div class="scard__actions">
-          <a href="#submit" class="scard__visit">Visit Business</a>
-          <div class="scard__social"><a href="#" title="LinkedIn">in</a><a href="#" title="GitHub">gh</a></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="scard" data-cat="Real Estate" data-loc="Revere" data-name="Nueva Raíces Real Estate">
-      <div class="scard__ribbon">⭐ FEATURED</div>
-      <div class="scard__header">
-        <div class="scard__logo">🏠</div>
-        <div>
-          <div class="scard__name">Nueva Raíces Real Estate</div>
-          <div class="scard__tagline">Helping immigrant families plant roots in New England</div>
-          <div class="scard__cats"><span class="scard__cat">Real Estate</span><span class="scard__cat">Residential · Commercial</span></div>
-        </div>
-      </div>
-      <div class="scard__body">
-        <p class="scard__desc">Colombian-owned real estate brokerage serving Revere, East Boston, and Greater Boston. Specializes in guiding first-generation immigrant families through the homebuying process — financing to closing — entirely in Spanish, with deep ties to the Colombian and wider Latino community. <em style="font-size:.8rem;color:var(--gray-mid);">(Sample listing)</em></p>
-        <div class="scard__meta">
-          <span class="scard__meta-item">📍 Revere · East Boston · Greater Boston</span>
-          <span class="scard__meta-item">🌐 EN · ES Bilingual agents</span>
-        </div>
-        <div class="scard__actions">
-          <a href="#submit" class="scard__visit">Visit Business</a>
-          <div class="scard__social"><a href="#" title="Facebook">f</a><a href="#" title="Instagram">ig</a></div>
-        </div>
-      </div>
-    </div>
-
-  </div><!-- /sponsoredGrid -->
+  <div class="sponsored-grid" id="sponsoredGrid"></div><!-- populated by js/directory.js from data/directory.json -->
 
   <!-- Upgrade nudge -->
   <div class="upgrade-strip" style="margin-top:32px;">
@@ -623,81 +456,7 @@
     <h2>All Businesses</h2>
     <span class="dir-count" id="basicCount">12 businesses</span>
   </div>
-  <div class="basic-grid" id="basicGrid">
-
-    <div class="bcard" data-cat="Food &amp; Beverage" data-loc="East Boston" data-name="Mi Rancho Restaurant">
-      <div class="bcard__top"><div class="bcard__icon">🍖</div><div><div class="bcard__name">Mi Rancho Restaurant</div><div class="bcard__cat">Food &amp; Beverage</div></div></div>
-      <p class="bcard__desc">Long-standing Colombian restaurant in East Boston serving traditional grilled meats, arepas, and hearty stews that have made it a community anchor for decades.</p>
-      <div class="bcard__foot"><span class="bcard__loc">📍 East Boston, MA</span><a href="#submit" class="bcard__link">View →</a></div>
-    </div>
-
-    <div class="bcard" data-cat="Beauty &amp; Personal Care" data-loc="East Boston" data-name="Marlen Beauty Salon">
-      <div class="bcard__top"><div class="bcard__icon">✂️</div><div><div class="bcard__name">Marlen Beauty Salon</div><div class="bcard__cat">Beauty &amp; Personal Care</div></div></div>
-      <p class="bcard__desc">Colombian-owned beauty salon in East Boston offering haircuts, styling, coloring, and nail services. A trusted neighborhood institution serving the Latin community.</p>
-      <div class="bcard__foot"><span class="bcard__loc">📍 East Boston, MA</span><a href="#submit" class="bcard__link">View →</a></div>
-    </div>
-
-    <div class="bcard" data-cat="Food &amp; Beverage" data-loc="East Boston" data-name="Café Gigú">
-      <div class="bcard__top"><div class="bcard__icon">☕</div><div><div class="bcard__name">Café Gigú</div><div class="bcard__cat">Food &amp; Beverage</div></div></div>
-      <p class="bcard__desc">Cozy Colombian café known for rich tinto, buñuelos, empanadas, and a warm atmosphere. A neighborhood favorite for breakfast and afternoon snacks in East Boston.</p>
-      <div class="bcard__foot"><span class="bcard__loc">📍 East Boston, MA</span><a href="#submit" class="bcard__link">View →</a></div>
-    </div>
-
-    <div class="bcard" data-cat="Arts &amp; Culture" data-loc="East Boston" data-name="Bajucol Dance Troupe">
-      <div class="bcard__top"><div class="bcard__icon">💃</div><div><div class="bcard__name">Bajucol</div><div class="bcard__cat">Arts &amp; Culture</div></div></div>
-      <p class="bcard__desc">East Boston-based Colombian folkloric dance troupe founded in 1995. Performers of traditional cumbia, bambuco, and vallenato at city events across New England.</p>
-      <div class="bcard__foot"><span class="bcard__loc">📍 East Boston, MA</span><a href="#submit" class="bcard__link">View →</a></div>
-    </div>
-
-    <div class="bcard" data-cat="Professional Services" data-loc="Boston" data-name="Andes Legal Group">
-      <div class="bcard__top"><div class="bcard__icon">⚖️</div><div><div class="bcard__name">Andes Legal Group</div><div class="bcard__cat">Professional Services</div></div></div>
-      <p class="bcard__desc">Immigration and small business law firm. Services include visa applications, business formation, contracts, and bilingual legal counsel. <em style="font-size:.78rem;opacity:.7">(Sample)</em></p>
-      <div class="bcard__foot"><span class="bcard__loc">📍 Boston, MA</span><a href="#submit" class="bcard__link">View →</a></div>
-    </div>
-
-    <div class="bcard" data-cat="Finance &amp; Accounting" data-loc="Newton" data-name="Sabana Tax">
-      <div class="bcard__top"><div class="bcard__icon">🧾</div><div><div class="bcard__name">Sabana Tax &amp; Accounting</div><div class="bcard__cat">Finance &amp; Accounting</div></div></div>
-      <p class="bcard__desc">Bilingual CPA firm offering personal and business tax preparation, bookkeeping, and financial planning for immigrant entrepreneurs. <em style="font-size:.78rem;opacity:.7">(Sample)</em></p>
-      <div class="bcard__foot"><span class="bcard__loc">📍 Newton, MA</span><a href="#submit" class="bcard__link">View →</a></div>
-    </div>
-
-    <div class="bcard" data-cat="Construction &amp; Trades" data-loc="Revere" data-name="Cordillera Construction">
-      <div class="bcard__top"><div class="bcard__icon">🔨</div><div><div class="bcard__name">Cordillera Construction</div><div class="bcard__cat">Construction &amp; Trades</div></div></div>
-      <p class="bcard__desc">General contractor specializing in residential renovation, kitchen remodels, and bathroom upgrades across Greater Boston. Colombian-owned, licensed and insured. <em style="font-size:.78rem;opacity:.7">(Sample)</em></p>
-      <div class="bcard__foot"><span class="bcard__loc">📍 Revere, MA</span><a href="#submit" class="bcard__link">View →</a></div>
-    </div>
-
-    <div class="bcard" data-cat="Health &amp; Wellness" data-loc="Somerville" data-name="Bienestar Family Health">
-      <div class="bcard__top"><div class="bcard__icon">🏥</div><div><div class="bcard__name">Bienestar Family Health</div><div class="bcard__cat">Health &amp; Wellness</div></div></div>
-      <p class="bcard__desc">Bilingual primary care practice offering family medicine and preventive health for Latino patients. All staff speak Spanish; accepting new patients. <em style="font-size:.78rem;opacity:.7">(Sample)</em></p>
-      <div class="bcard__foot"><span class="bcard__loc">📍 Somerville, MA</span><a href="#submit" class="bcard__link">View →</a></div>
-    </div>
-
-    <div class="bcard" data-cat="Technology" data-loc="Boston" data-name="Orinoco Digital">
-      <div class="bcard__top"><div class="bcard__icon">📱</div><div><div class="bcard__name">Orinoco Digital</div><div class="bcard__cat">Technology</div></div></div>
-      <p class="bcard__desc">Digital marketing agency helping small businesses grow online with SEO, social media, paid advertising, and Spanish-language content creation. <em style="font-size:.78rem;opacity:.7">(Sample)</em></p>
-      <div class="bcard__foot"><span class="bcard__loc">📍 Boston, MA</span><a href="#submit" class="bcard__link">View →</a></div>
-    </div>
-
-    <div class="bcard" data-cat="Food &amp; Beverage" data-loc="Cambridge" data-name="La Finca Catering">
-      <div class="bcard__top"><div class="bcard__icon">🎉</div><div><div class="bcard__name">La Finca Catering</div><div class="bcard__cat">Food &amp; Beverage</div></div></div>
-      <p class="bcard__desc">Colombian catering company for events 20–300 guests. Authentic bandeja paisa, arepas, buñuelos, chicharrón, and custom menus for weddings and corporate events. <em style="font-size:.78rem;opacity:.7">(Sample)</em></p>
-      <div class="bcard__foot"><span class="bcard__loc">📍 Cambridge, MA</span><a href="#submit" class="bcard__link">View →</a></div>
-    </div>
-
-    <div class="bcard" data-cat="Education" data-loc="East Boston" data-name="Esmeralda Tutoring">
-      <div class="bcard__top"><div class="bcard__icon">📚</div><div><div class="bcard__name">Esmeralda Tutoring</div><div class="bcard__cat">Education</div></div></div>
-      <p class="bcard__desc">Bilingual tutoring for K–12 in math, Spanish, English, and science. Founded by a Colombian educator with 15+ years of experience. In-home and online sessions. <em style="font-size:.78rem;opacity:.7">(Sample)</em></p>
-      <div class="bcard__foot"><span class="bcard__loc">📍 East Boston, MA</span><a href="#submit" class="bcard__link">View →</a></div>
-    </div>
-
-    <div class="bcard" data-cat="Beauty &amp; Personal Care" data-loc="Revere" data-name="Salon Cartagena">
-      <div class="bcard__top"><div class="bcard__icon">💇</div><div><div class="bcard__name">Salon Cartagena</div><div class="bcard__cat">Beauty &amp; Personal Care</div></div></div>
-      <p class="bcard__desc">Full-service hair and beauty salon. Colombian-owned, offering cuts, braids, keratin treatments, and facials to the Revere and East Boston community. <em style="font-size:.78rem;opacity:.7">(Sample)</em></p>
-      <div class="bcard__foot"><span class="bcard__loc">📍 Revere, MA</span><a href="#submit" class="bcard__link">View →</a></div>
-    </div>
-
-  </div><!-- /basicGrid -->
+  <div class="basic-grid" id="basicGrid"></div><!-- populated by js/directory.js from data/directory.json -->
 
   <div id="noResults" style="text-align:center;padding:56px 0;color:var(--gray-mid);display:none;">
     <p style="font-size:1.1rem;font-weight:600;">No businesses found for that search.</p>
@@ -750,49 +509,8 @@
 
 <div id="site-footer"></div>
 
-<script>
-  window.NEACOL_ROOT = '../';
-  var searchInput    = document.getElementById('dirSearch');
-  var catSelect      = document.getElementById('dirCatFilter');
-  var locSelect      = document.getElementById('dirLocFilter');
-  var pills          = document.querySelectorAll('.filter-pill');
-  var sponsoredCards = Array.from(document.querySelectorAll('#sponsoredGrid .scard'));
-  var basicCards     = Array.from(document.querySelectorAll('#basicGrid .bcard'));
-  var noResults      = document.getElementById('noResults');
-  var sponsoredCount = document.getElementById('sponsoredCount');
-  var basicCount     = document.getElementById('basicCount');
-  var activeCat      = '';
-
-  function norm(s){ return (s||'').toLowerCase().replace(/&amp;/g,'&'); }
-
-  function run() {
-    var q   = norm(searchInput.value);
-    var cat = norm(activeCat || catSelect.value);
-    var loc = norm(locSelect.value);
-    var sc=0, bc=0;
-    function ok(c){
-      return (!q   || norm(c.textContent).includes(q))
-          && (!cat || norm(c.dataset.cat||'').includes(cat))
-          && (!loc || norm(c.dataset.loc||'').includes(loc));
-    }
-    sponsoredCards.forEach(function(c){ var s=ok(c); c.style.display=s?'':'none'; if(s)sc++; });
-    basicCards.forEach(function(c){ var s=ok(c); c.style.display=s?'':'none'; if(s)bc++; });
-    sponsoredCount.textContent = sc+' business'+(sc!==1?'es':'');
-    basicCount.textContent     = bc+' business'+(bc!==1?'es':'');
-    noResults.style.display    = (sc+bc===0)?'block':'none';
-  }
-
-  searchInput.addEventListener('input', run);
-  catSelect.addEventListener('change', function(){ activeCat=''; pills.forEach(function(p){p.classList.remove('active');}); document.querySelector('.filter-pill[data-cat=""]').classList.add('active'); run(); });
-  locSelect.addEventListener('change', run);
-  pills.forEach(function(pill){
-    pill.addEventListener('click', function(){
-      activeCat = this.dataset.cat;
-      pills.forEach(function(p){p.classList.remove('active');}); this.classList.add('active');
-      catSelect.value = activeCat; run();
-    });
-  });
-</script>
+<script>window.NEACOL_ROOT = '../';</script>
 <script src="../js/components.js"></script>
+<script src="../js/directory.js"></script>
 </body>
 </html>

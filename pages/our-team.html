@@ -16,7 +16,7 @@
     }
     .team-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:28px; }
     .bio-card { background:var(--white);border:1px solid var(--gray-light);border-radius:10px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column; }
-    .bio-card__img { width:100%;height:220px;object-fit:cover;object-position:top; }
+    .bio-card__img { width:100%;height:220px;object-fit:contain;object-position:center;background:var(--off-white); }
     .bio-card__no-photo { width:100%;height:100px;background:var(--navy);display:flex;align-items:center;justify-content:center; }
     .bio-card__no-photo span { width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:rgba(255,255,255,.5); }
     .bio-card__body { padding:20px 24px 24px;flex:1; }
@@ -45,7 +45,7 @@
 
     <!-- Ricardo: Board Chair with photo -->
     <div class="bio-card">
-      <img class="bio-card__img" src="https://neacol.org/wp-content/uploads/2025/10/Ricardo.png" alt="Ricardo A. Rodriguez" style="object-position:top center;">
+      <img class="bio-card__img" src="https://neacol.org/wp-content/uploads/2025/10/Ricardo.png" alt="Ricardo A. Rodriguez">
       <div class="bio-card__body">
         <div class="bio-card__name">Ricardo A. Rodriguez</div>
         <div class="bio-card__role">Chair, Board of Directors</div>

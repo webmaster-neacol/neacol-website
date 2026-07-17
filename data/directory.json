@@ -1,0 +1,307 @@
+{
+  "_readme": [
+    "Colombian Business Directory data source.",
+    "To add a business: append an object to 'listings' below and save — pages/directory.html reads this file and renders itself, no HTML edits needed.",
+    "'type': 'featured' (paid/sponsored — larger card, logo tile, tagline, meta rows, social links) or 'basic' (free — compact card).",
+    "'category' should match one entry in meta.categories (add a new one there first if needed — filters update automatically).",
+    "'location' should be a city from meta.locations (add a new one there first if needed).",
+    "Shared fields (both types): id (unique slug), type, name, icon (emoji), category, description, location, website (URL for the button/link — use '#submit' if the business has no site yet), sample (true adds a '(Sample)' note for placeholder/demo listings — set false for real businesses).",
+    "Featured-only fields: tagline (one-liner under the name), tags (array of extra category chips), meta (array of {icon, text} rows, e.g. address or hours), social (array of {platform, url, label} — label is the short glyph shown on the button, e.g. 'f', 'ig', 'in')."
+  ],
+
+  "meta": {
+    "categories": [
+      "Food & Beverage",
+      "Beauty & Personal Care",
+      "Professional Services",
+      "Technology",
+      "Real Estate",
+      "Health & Wellness",
+      "Finance & Accounting",
+      "Arts & Culture",
+      "Construction & Trades",
+      "Education"
+    ],
+    "pinnedCategories": [
+      "Food & Beverage",
+      "Professional Services",
+      "Technology",
+      "Beauty & Personal Care",
+      "Real Estate",
+      "Health & Wellness",
+      "Finance & Accounting",
+      "Construction & Trades"
+    ],
+    "locations": [
+      "Boston",
+      "East Boston",
+      "Cambridge",
+      "Lowell",
+      "Revere",
+      "Somerville",
+      "Newton"
+    ]
+  },
+
+  "listings": [
+    {
+      "id": "la-sultana-bakery",
+      "type": "featured",
+      "name": "La Sultana Bakery",
+      "icon": "🥐",
+      "tagline": "Colombian pastries, breads & community hub since 1993",
+      "category": "Food & Beverage",
+      "tags": ["Bakery · Café"],
+      "description": "One of East Boston's most beloved institutions, La Sultana Bakery has served the Colombian and broader Latino community from Maverick Square since 1993. Founded by Amelia Sanchez, celebrated for authentic Colombian sweets and baked goods — and long a welcoming space for newcomers seeking community.",
+      "location": "East Boston",
+      "meta": [
+        { "icon": "📍", "text": "Maverick Square, East Boston, MA" },
+        { "icon": "🗓", "text": "Est. 1993 · 30+ years of community" }
+      ],
+      "website": "#submit",
+      "social": [
+        { "platform": "facebook", "url": "#", "label": "f" },
+        { "platform": "instagram", "url": "#", "label": "ig" }
+      ],
+      "sample": false
+    },
+    {
+      "id": "el-penol",
+      "type": "featured",
+      "name": "El Peñol",
+      "icon": "🍲",
+      "tagline": "Authentic Colombian cuisine in the heart of East Boston",
+      "category": "Food & Beverage",
+      "tags": ["Colombian Restaurant"],
+      "description": "El Peñol brings the flavors of Colombia to East Boston's vibrant dining scene. The menu features classic dishes including yuca fritas, salmon soup, and grilled chicken in a creamy cilantro-mushroom sauce. A neighborhood favorite known for generous portions and a warm family atmosphere.",
+      "location": "East Boston",
+      "meta": [
+        { "icon": "📍", "text": "East Boston, MA" },
+        { "icon": "🍽", "text": "Dine-in · Takeout" }
+      ],
+      "website": "#submit",
+      "social": [
+        { "platform": "facebook", "url": "#", "label": "f" },
+        { "platform": "google", "url": "#", "label": "G" }
+      ],
+      "sample": false
+    },
+    {
+      "id": "panela-restaurant",
+      "type": "featured",
+      "name": "Panela",
+      "icon": "🌿",
+      "tagline": "Colombian flavors bringing a taste of home to Lowell",
+      "category": "Food & Beverage",
+      "tags": ["Colombian Restaurant"],
+      "description": "Panela serves the Colombian community of Lowell with traditional recipes rooted in the flavors of home. Named for the unrefined cane sugar that sweetens countless Colombian dishes, it has become a go-to for authentic cooking in the Merrimack Valley.",
+      "location": "Lowell",
+      "meta": [
+        { "icon": "📍", "text": "Lowell, MA" },
+        { "icon": "🍽", "text": "Dine-in · Takeout · Catering" }
+      ],
+      "website": "#submit",
+      "social": [
+        { "platform": "facebook", "url": "#", "label": "f" },
+        { "platform": "instagram", "url": "#", "label": "ig" }
+      ],
+      "sample": false
+    },
+    {
+      "id": "andina-consulting-group",
+      "type": "featured",
+      "name": "Andina Consulting Group",
+      "icon": "📊",
+      "tagline": "Strategy, finance & operations for growing businesses",
+      "category": "Professional Services",
+      "tags": ["Bilingual Advisory"],
+      "description": "Boston-based management consulting firm founded by Colombian professionals. Specializes in growth strategy, financial modeling, and operational efficiency for mid-market companies. Bridges the US and Latin American business worlds with fully bilingual advisory services.",
+      "location": "Boston",
+      "meta": [
+        { "icon": "📍", "text": "Boston, MA (Seaport District)" },
+        { "icon": "🌐", "text": "EN · ES Bilingual" }
+      ],
+      "website": "#submit",
+      "social": [
+        { "platform": "linkedin", "url": "#", "label": "in" },
+        { "platform": "twitter", "url": "#", "label": "𝕏" }
+      ],
+      "sample": true
+    },
+    {
+      "id": "coltech-solutions",
+      "type": "featured",
+      "name": "ColTech Solutions",
+      "icon": "💻",
+      "tagline": "Software development & digital transformation",
+      "category": "Technology",
+      "tags": ["Software · Web"],
+      "description": "Cambridge-based software and digital transformation agency founded by Colombian engineers. Builds custom web applications, mobile products, and data platforms for startups and nonprofits — with a focus on clients serving underserved Latino communities.",
+      "location": "Cambridge",
+      "meta": [
+        { "icon": "📍", "text": "Cambridge, MA" },
+        { "icon": "🎯", "text": "Startups · Nonprofits · SMBs" }
+      ],
+      "website": "#submit",
+      "social": [
+        { "platform": "linkedin", "url": "#", "label": "in" },
+        { "platform": "github", "url": "#", "label": "gh" }
+      ],
+      "sample": true
+    },
+    {
+      "id": "nueva-raices-real-estate",
+      "type": "featured",
+      "name": "Nueva Raíces Real Estate",
+      "icon": "🏠",
+      "tagline": "Helping immigrant families plant roots in New England",
+      "category": "Real Estate",
+      "tags": ["Residential · Commercial"],
+      "description": "Colombian-owned real estate brokerage serving Revere, East Boston, and Greater Boston. Specializes in guiding first-generation immigrant families through the homebuying process — financing to closing — entirely in Spanish, with deep ties to the Colombian and wider Latino community.",
+      "location": "Revere",
+      "meta": [
+        { "icon": "📍", "text": "Revere · East Boston · Greater Boston" },
+        { "icon": "🌐", "text": "EN · ES Bilingual agents" }
+      ],
+      "website": "#submit",
+      "social": [
+        { "platform": "facebook", "url": "#", "label": "f" },
+        { "platform": "instagram", "url": "#", "label": "ig" }
+      ],
+      "sample": true
+    },
+
+    {
+      "id": "mi-rancho-restaurant",
+      "type": "basic",
+      "name": "Mi Rancho Restaurant",
+      "icon": "🍖",
+      "category": "Food & Beverage",
+      "description": "Long-standing Colombian restaurant in East Boston serving traditional grilled meats, arepas, and hearty stews that have made it a community anchor for decades.",
+      "location": "East Boston",
+      "website": "#submit",
+      "sample": false
+    },
+    {
+      "id": "marlen-beauty-salon",
+      "type": "basic",
+      "name": "Marlen Beauty Salon",
+      "icon": "✂️",
+      "category": "Beauty & Personal Care",
+      "description": "Colombian-owned beauty salon in East Boston offering haircuts, styling, coloring, and nail services. A trusted neighborhood institution serving the Latin community.",
+      "location": "East Boston",
+      "website": "#submit",
+      "sample": false
+    },
+    {
+      "id": "cafe-gigu",
+      "type": "basic",
+      "name": "Café Gigú",
+      "icon": "☕",
+      "category": "Food & Beverage",
+      "description": "Cozy Colombian café known for rich tinto, buñuelos, empanadas, and a warm atmosphere. A neighborhood favorite for breakfast and afternoon snacks in East Boston.",
+      "location": "East Boston",
+      "website": "#submit",
+      "sample": false
+    },
+    {
+      "id": "bajucol-dance-troupe",
+      "type": "basic",
+      "name": "Bajucol",
+      "icon": "💃",
+      "category": "Arts & Culture",
+      "description": "East Boston-based Colombian folkloric dance troupe founded in 1995. Performers of traditional cumbia, bambuco, and vallenato at city events across New England.",
+      "location": "East Boston",
+      "website": "#submit",
+      "sample": false
+    },
+    {
+      "id": "andes-legal-group",
+      "type": "basic",
+      "name": "Andes Legal Group",
+      "icon": "⚖️",
+      "category": "Professional Services",
+      "description": "Immigration and small business law firm. Services include visa applications, business formation, contracts, and bilingual legal counsel.",
+      "location": "Boston",
+      "website": "#submit",
+      "sample": true
+    },
+    {
+      "id": "sabana-tax",
+      "type": "basic",
+      "name": "Sabana Tax & Accounting",
+      "icon": "🧾",
+      "category": "Finance & Accounting",
+      "description": "Bilingual CPA firm offering personal and business tax preparation, bookkeeping, and financial planning for immigrant entrepreneurs.",
+      "location": "Newton",
+      "website": "#submit",
+      "sample": true
+    },
+    {
+      "id": "cordillera-construction",
+      "type": "basic",
+      "name": "Cordillera Construction",
+      "icon": "🔨",
+      "category": "Construction & Trades",
+      "description": "General contractor specializing in residential renovation, kitchen remodels, and bathroom upgrades across Greater Boston. Colombian-owned, licensed and insured.",
+      "location": "Revere",
+      "website": "#submit",
+      "sample": true
+    },
+    {
+      "id": "bienestar-family-health",
+      "type": "basic",
+      "name": "Bienestar Family Health",
+      "icon": "🏥",
+      "category": "Health & Wellness",
+      "description": "Bilingual primary care practice offering family medicine and preventive health for Latino patients. All staff speak Spanish; accepting new patients.",
+      "location": "Somerville",
+      "website": "#submit",
+      "sample": true
+    },
+    {
+      "id": "orinoco-digital",
+      "type": "basic",
+      "name": "Orinoco Digital",
+      "icon": "📱",
+      "category": "Technology",
+      "description": "Digital marketing agency helping small businesses grow online with SEO, social media, paid advertising, and Spanish-language content creation.",
+      "location": "Boston",
+      "website": "#submit",
+      "sample": true
+    },
+    {
+      "id": "la-finca-catering",
+      "type": "basic",
+      "name": "La Finca Catering",
+      "icon": "🎉",
+      "category": "Food & Beverage",
+      "description": "Colombian catering company for events 20–300 guests. Authentic bandeja paisa, arepas, buñuelos, chicharrón, and custom menus for weddings and corporate events.",
+      "location": "Cambridge",
+      "website": "#submit",
+      "sample": true
+    },
+    {
+      "id": "esmeralda-tutoring",
+      "type": "basic",
+      "name": "Esmeralda Tutoring",
+      "icon": "📚",
+      "category": "Education",
+      "description": "Bilingual tutoring for K–12 in math, Spanish, English, and science. Founded by a Colombian educator with 15+ years of experience. In-home and online sessions.",
+      "location": "East Boston",
+      "website": "#submit",
+      "sample": true
+    },
+    {
+      "id": "salon-cartagena",
+      "type": "basic",
+      "name": "Salon Cartagena",
+      "icon": "💇",
+      "category": "Beauty & Personal Care",
+      "description": "Full-service hair and beauty salon. Colombian-owned, offering cuts, braids, keratin treatments, and facials to the Revere and East Boston community.",
+      "location": "Revere",
+      "website": "#submit",
+      "sample": true
+    }
+  ]
+}
